@@ -1,18 +1,18 @@
 /*
 ** rotation.c for rtv1 in /home/thibaud/rendu/MUL_2013_rtv1
-** 
+**
 ** Made by thibaud
 ** Login   <thibaud@epitech.net>
-** 
+**
 ** Started on  Thu Feb 20 00:54:53 2014 thibaud
-** Last update Sat Mar  8 16:11:00 2014 thibaud
+** Last update Thu Apr 24 14:45:06 2014 romaric
 */
 
 #include "rtv1.h"
 
-void	rotX(t_vec3 *vec, float angle)
+void		rotX(t_vec3 *vec, float angle)
 {
-  float	tmp[3];
+  float		tmp[3];
 
   tmp[0] = vec->x;
   tmp[1] = vec->y;
@@ -21,9 +21,9 @@ void	rotX(t_vec3 *vec, float angle)
   vec->z = sinf(angle) * tmp[1] + cosf(angle) * tmp[2];
 }
 
-void	rotY(t_vec3 *vec, float angle)
+void		rotY(t_vec3 *vec, float angle)
 {
-  float	tmp[3];
+  float		tmp[3];
 
   tmp[0] = vec->x;
   tmp[1] = vec->y;
@@ -32,9 +32,9 @@ void	rotY(t_vec3 *vec, float angle)
   vec->z = -1 * sinf(angle) * tmp[0] + cosf(angle) * tmp[2];
 }
 
-void	rotZ(t_vec3 *vec, float angle)
+void		rotZ(t_vec3 *vec, float angle)
 {
-  float	tmp[3];
+  float		tmp[3];
 
   tmp[0] = vec->x;
   tmp[1] = vec->y;

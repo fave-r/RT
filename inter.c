@@ -5,17 +5,17 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Wed Feb 26 14:21:52 2014 thibaud
-** Last update Thu Apr 24 14:27:49 2014 romaric
+** Last update Thu Apr 24 14:39:53 2014 romaric
 */
 
 #include "rtv1.h"
 
-float   inter_sphere(t_vec3 *pos, t_vec3 *dir, int R)
+float		inter_sphere(t_vec3 *pos, t_vec3 *dir, int R)
 {
-  float delta;
-  float k1;
-  float k2;
-  float c[3];
+  float		delta;
+  float		k1;
+  float		k2;
+  float		c[3];
 
   k1 = ZERO;
   c[0] = (dir->x * dir->x) + (dir->y * dir->y) + (dir->z * dir->z);
@@ -34,9 +34,9 @@ float   inter_sphere(t_vec3 *pos, t_vec3 *dir, int R)
   return (k1);
 }
 
-float   inter_plan(t_vec3 *pos, t_vec3 *dir, int R)
+float		inter_plan(t_vec3 *pos, t_vec3 *dir, int R)
 {
-  float k;
+  float		k;
 
   (void)R;
   k = ZERO;
@@ -45,7 +45,7 @@ float   inter_plan(t_vec3 *pos, t_vec3 *dir, int R)
   return (k);
 }
 
-float	cut_obj(float k1, t_vec3 *pos, t_vec3 *dir, float x, float y)
+float		cut_obj(float k1, t_vec3 *pos, t_vec3 *dir, float x, float y)
 {
   t_eye		eye_tmp;
   t_vec3	*inter;

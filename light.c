@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Thu Mar  6 20:34:38 2014 thibaud
-** Last update Thu Apr 24 14:32:28 2014 romaric
+** Last update Thu Apr 24 14:36:45 2014 romaric
 */
 
 #include "rtv1.h"
@@ -69,12 +69,12 @@ int		luminosite(t_eye *eye, float k2
   return (spot->color);
 }
 
-int     ad_color(int color1, int color2)
+int		ad_color(int color1, int color2)
 {
-  int   col[3];
-  int   col1[3];
-  int   col2[3];
-  int   result;
+  int		col[3];
+  int		col1[3];
+  int		col2[3];
+  int		result;
 
   col1[2] = (color1 / (256 * 256));
   col1[1] = (color1 % (256 * 256)) / 256;
@@ -90,9 +90,9 @@ int     ad_color(int color1, int color2)
   return (result);
 }
 
-int     put_lum(int color, float result)
+int		put_lum(int color, float result)
 {
-  int   col[3];
+  int		col[3];
 
   if (result > ZERO)
     {

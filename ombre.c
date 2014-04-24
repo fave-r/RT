@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Thu Mar  6 16:25:10 2014 thibaud
-** Last update Thu Apr 24 14:31:14 2014 romaric
+** Last update Thu Apr 24 14:44:21 2014 romaric
 */
 
 #include "rtv1.h"
@@ -32,10 +32,10 @@ t_vec3		*to_light_(t_vec3 *inter, t_spot *spot)
   return (result);
 }
 
-int     put_ombre(int color, int nb)
+int		put_ombre(int color, int nb)
 {
-  int   col[3];
-  float ombre;
+  int		col[3];
+  float		ombre;
   ombre = 1;
   if (nb > 0)
     ombre = 0.4 / nb;

@@ -5,7 +5,7 @@
 ## Login   <thibaud@epitech.net>
 ##
 ## Started on  Mon Oct 21 09:07:38 2013 thibaud
-## Last update Wed Apr 23 16:47:23 2014 romaric
+## Last update Thu Apr 24 14:43:02 2014 romaric
 ##
 
 CC=		gcc
@@ -20,13 +20,13 @@ SRCS=		main.c \
 		rotation.c \
 		list.c \
 		inter.c \
-		inter2.c \
+		inter_next.c \
 		basic_fct.c \
-		basic_fct2.c \
+		basic_fct_next.c \
 		norme.c \
 		init.c \
 		moove_obj.c \
-		moove_obj2.c \
+		moove_obj_next.c \
 		ombre.c \
 		free.c \
 		light.c

@@ -1,11 +1,11 @@
 /*
 ** basic_fct2.c for rtv1 in /home/thibaud/rendu/MUL_2013_rtv1
-** 
+**
 ** Made by thibaud
 ** Login   <thibaud@epitech.net>
-** 
+**
 ** Started on  Sat Mar 15 19:36:13 2014 thibaud
-** Last update Sat Mar 15 20:13:41 2014 thibaud
+** Last update Thu Apr 24 14:34:21 2014 romaric
 */
 
 #include "rtv1.h"
@@ -20,9 +20,9 @@ t_mlx		get_data(t_mlx mlx)
   return (mlx);
 }
 
-int     find_type(t_obj *obj)
+int		find_type(t_obj *obj)
 {
-  int   i;
+  int		i;
 
   i = 0;
   while (my_strcmp(tab[i].type, "\0") != 0)
@@ -35,7 +35,7 @@ int     find_type(t_obj *obj)
   return (i);
 }
 
-int     *color_limit(int *col)
+int		*color_limit(int *col)
 {
   if (col[0] > 255)
     col[0] = 255;
