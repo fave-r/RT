@@ -1,11 +1,11 @@
 /*
 ** inter.c for rtv1 in /home/thibaud/rendu/MUL_2013_rtv1
-** 
+**
 ** Made by thibaud
 ** Login   <thibaud@epitech.net>
-** 
+**
 ** Started on  Wed Feb 26 14:21:52 2014 thibaud
-** Last update Sat Mar 15 20:21:26 2014 thibaud
+** Last update Thu Apr 24 14:27:49 2014 romaric
 */
 
 #include "rtv1.h"
@@ -73,7 +73,7 @@ float		inter_cone(t_vec3 *pos, t_vec3 *dir, int R)
   c[1] = (pos->x * dir->x) + (pos->y * dir->y) -
     ((pos->z * dir->z) * tan(rad_conv(R)));
   c[1] *= 2;
-  c[2] = (pow(pos->x, 2) + pow(pos->y, 2)) - 
+  c[2] = (pow(pos->x, 2) + pow(pos->y, 2)) -
     pow(pos->z, 2) * tan(rad_conv(R));
   delta = pow(c[1], 2) - 4 * (c[0] * c[2]);
   if (delta >= ZERO)
@@ -86,4 +86,3 @@ float		inter_cone(t_vec3 *pos, t_vec3 *dir, int R)
     }
   return (k1);
 }
-

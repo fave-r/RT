@@ -1,11 +1,11 @@
 /*
 ** moove_obj.c for rtv1 in /home/thibaud/rendu/MUL_2013_rtv1
-** 
+**
 ** Made by thibaud
 ** Login   <thibaud@epitech.net>
-** 
+**
 ** Started on  Thu Mar  6 16:09:23 2014 thibaud
-** Last update Mon Mar 10 22:22:14 2014 thibaud
+** Last update Thu Apr 24 14:28:37 2014 romaric
 */
 
 #include "rtv1.h"
@@ -26,8 +26,8 @@ int     translate_pos_inv(t_vec3 *pos, t_vec3 *go_to)
   return (0);
 }
 
-int     place_obj(t_vec3 *pos,t_vec3 *dir, t_vec3 *go_to, t_vec3 *rotate)
-{ 
+int     place_obj(t_vec3 *pos, t_vec3 *dir, t_vec3 *go_to, t_vec3 *rotate)
+{
   rotate_all(dir, rotate);
   translate_pos(pos, go_to);
   return (0);

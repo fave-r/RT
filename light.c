@@ -1,11 +1,11 @@
 /*
 ** light.c for rtv1 in /home/thibaud/rendu/MUL_2013_rtv1
-** 
+**
 ** Made by thibaud
 ** Login   <thibaud@epitech.net>
-** 
+**
 ** Started on  Thu Mar  6 20:34:38 2014 thibaud
-** Last update Sun Mar 16 20:50:34 2014 thibaud
+** Last update Thu Apr 24 14:32:28 2014 romaric
 */
 
 #include "rtv1.h"
@@ -25,7 +25,8 @@ int		final_lum(t_spot *spot)
   return (color);
 }
 
-int		gere_light(t_eye *eye, float k2, t_obj *clos_obj, t_obj *obj, t_spot *spot)
+int		gere_light(t_eye *eye, float k2
+			   , t_obj *clos_obj, t_obj *obj, t_spot *spot)
 {
   int		color;
   t_spot        *cur_spot;
@@ -45,7 +46,8 @@ int		gere_light(t_eye *eye, float k2, t_obj *clos_obj, t_obj *obj, t_spot *spot)
   return (color);
 }
 
-int		luminosite(t_eye *eye, float k2, t_obj *clos_obj, t_spot *spot, int color)
+int		luminosite(t_eye *eye, float k2
+			   , t_obj *clos_obj, t_spot *spot, int color)
 {
   t_vec3        *inter;
   t_vec3        *vec_light;
@@ -55,9 +57,11 @@ int		luminosite(t_eye *eye, float k2, t_obj *clos_obj, t_spot *spot, int color)
   inter = inter_obj(eye, k2);
   norme = tab[find_type(clos_obj)].norme(inter);
   vec_light = to_light_(inter, spot);
-  result = (norme->x * vec_light->x + norme->y * vec_light->y + norme->z * vec_light->z) /
+  result = (norme->x * vec_light->x + norme->y
+	    * vec_light->y + norme->z * vec_light->z) /
     ((sqrt(pow(norme->x, 2) + pow(norme->y, 2) + pow(norme->z, 2)) *
-      sqrt(pow(vec_light->x, 2) + pow(vec_light->y, 2) + pow(vec_light->z, 2))));
+      sqrt(pow(vec_light->x, 2)
+	   + pow(vec_light->y, 2) + pow(vec_light->z, 2))));
   spot->color = put_lum(color, result);
   free(inter);
   free(vec_light);

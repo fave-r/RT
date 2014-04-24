@@ -1,11 +1,11 @@
 /*
 ** ombre.c for rtv1 in /home/thibaud/rendu/MUL_2013_rtv1
-** 
+**
 ** Made by thibaud
 ** Login   <thibaud@epitech.net>
-** 
+**
 ** Started on  Thu Mar  6 16:25:10 2014 thibaud
-** Last update Sun Mar 16 20:33:54 2014 thibaud
+** Last update Thu Apr 24 14:31:14 2014 romaric
 */
 
 #include "rtv1.h"
@@ -49,7 +49,8 @@ int     put_ombre(int color, int nb)
   return (color);
 }
 
-int		ombre(t_obj *obj, t_eye *eye, t_obj *clos_obj, float k2, t_spot *cur_spot)
+int		ombre(t_obj *obj, t_eye *eye
+		      , t_obj *clos_obj, float k2, t_spot *cur_spot)
 {
   t_obj         *cur_obj;
   t_vec3        *inter;
@@ -74,4 +75,3 @@ int		ombre(t_obj *obj, t_eye *eye, t_obj *clos_obj, float k2, t_spot *cur_spot)
   free(vec_light);
   return (0);
 }
-

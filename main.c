@@ -1,15 +1,15 @@
 /*
 ** main.c for rtv1 in /home/thibaud/rendu/MUL_2013_rtv1
-** 
+**
 ** Made by thibaud
 ** Login   <thibaud@epitech.net>
-** 
+**
 ** Started on  Tue Feb 11 19:30:01 2014 thibaud
-** Last update Sun Mar 16 21:00:22 2014 thibaud
+** Last update Thu Apr 24 14:28:08 2014 romaric
 */
 
-#include "rtv1.h"
 #include <float.h>
+#include "rtv1.h"
 
 t_flag	tab[] =
   {

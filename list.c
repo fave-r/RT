@@ -1,11 +1,11 @@
 /*
 ** list.c for rtv1 in /home/thibaud/rendu/MUL_2013_rtv1
-** 
+**
 ** Made by thibaud
 ** Login   <thibaud@epitech.net>
-** 
+**
 ** Started on  Wed Feb 26 14:16:33 2014 thibaud
-** Last update Sun Mar 16 20:44:04 2014 thibaud
+** Last update Thu Apr 24 14:31:36 2014 romaric
 */
 
 #include "rtv1.h"
@@ -57,7 +57,8 @@ t_obj   *creat_obj_list()
   return (root);
 }
 
-int     ad_obj(t_obj *list, char *type, int R, int color, t_vec3 *pos, t_vec3 *angle)
+int     ad_obj(t_obj *list, char *type
+	       , int R, int color, t_vec3 *pos, t_vec3 *angle)
 {
   t_obj *new_elem;
 
