@@ -5,7 +5,7 @@
 ## Login   <thibaud@epitech.net>
 ##
 ## Started on  Mon Oct 21 09:07:38 2013 thibaud
-## Last update Thu Apr 24 14:43:02 2014 romaric
+## Last update Thu Apr 24 14:47:53 2014 bourrel
 ##
 
 CC=		gcc
@@ -31,7 +31,7 @@ SRCS=		main.c \
 		free.c \
 		light.c
 
-MINLIB=		-lmlx -L/usr/lib64 -lxext -lX11 -L/usr/lib64/X11 -lm
+MINLIB=		-lmlx -L/usr/lib64 -lXext -lX11 -L/usr/lib64/X11 -lm
 
 OBJS=		$(SRCS:.c=.o)
 
