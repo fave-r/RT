@@ -1,11 +1,11 @@
 /*
 ** basic_fct.c for rtv1 in /home/thibaud/rendu/MUL_2013_rtv1
-** 
+**
 ** Made by thibaud
 ** Login   <thibaud@epitech.net>
-** 
+**
 ** Started on  Wed Feb 26 14:26:20 2014 thibaud
-** Last update Sun Mar 16 21:00:03 2014 thibaud
+** Last update Thu Apr 24 14:39:02 2014 romaric
 */
 
 #include "rtv1.h"

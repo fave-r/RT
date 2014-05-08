@@ -1,16 +1,16 @@
 /*
 ** free.c for rtv1 in /home/thibaud/rendu/MUL_2013_rtv1
-** 
+**
 ** Made by thibaud
 ** Login   <thibaud@epitech.net>
-** 
+**
 ** Started on  Sun Mar 16 20:46:52 2014 thibaud
-** Last update Sun Mar 16 20:56:12 2014 thibaud
+** Last update Thu Apr 24 14:35:16 2014 romaric
 */
 
 #include "rtv1.h"
 
-int	free_eye(t_eye eye)
+int		free_eye(t_eye eye)
 {
   free(eye.pos);
   free(eye.dir);
@@ -18,14 +18,14 @@ int	free_eye(t_eye eye)
   return (0);
 }
 
-int     free_all(t_obj *objs, t_spot *spots)
+int		free_all(t_obj *objs, t_spot *spots)
 {
   free_spots(spots);
   free_objs(objs);
   return (0);
 }
 
-int     free_spots(t_spot *spots)
+int		free_spots(t_spot *spots)
 {
   t_spot        *tmp1;
   t_spot        *tmp2;
@@ -45,10 +45,10 @@ int     free_spots(t_spot *spots)
   return (0);
 }
 
-int     free_objs(t_obj *objs)
+int		free_objs(t_obj *objs)
 {
-  t_obj *tmp1;
-  t_obj *tmp2;
+  t_obj		*tmp1;
+  t_obj		*tmp2;
 
   if (objs != NULL)
     {

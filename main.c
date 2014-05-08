@@ -1,17 +1,17 @@
 /*
 ** main.c for rtv1 in /home/thibaud/rendu/MUL_2013_rtv1
-** 
+**
 ** Made by thibaud
 ** Login   <thibaud@epitech.net>
-** 
+**
 ** Started on  Tue Feb 11 19:30:01 2014 thibaud
-** Last update Sun Mar 16 21:00:22 2014 thibaud
+** Last update Thu Apr 24 14:37:50 2014 romaric
 */
 
-#include "rtv1.h"
 #include <float.h>
+#include "rtv1.h"
 
-t_flag	tab[] =
+t_flag		tab[] =
   {
     {"PLAN", &inter_plan, &norme_plan},
     {"CYLINDRE", &inter_cylindre, &norme_cylindre},
@@ -21,12 +21,12 @@ t_flag	tab[] =
     {"\0", NULL, NULL},
   };
 
-int	inter_objs(t_eye *eye, t_obj *obj, t_spot *spot)
+int		inter_objs(t_eye *eye, t_obj *obj, t_spot *spot)
 {
-  t_obj	*cur_obj;
-  t_obj	*clos_obj;
-  float	k1;
-  float	k2;
+  t_obj		*cur_obj;
+  t_obj		*clos_obj;
+  float		k1;
+  float		k2;
 
   cur_obj = obj->next;
   clos_obj = NULL;
@@ -48,12 +48,12 @@ int	inter_objs(t_eye *eye, t_obj *obj, t_spot *spot)
   return (0x000000);
 }
 
-int	fill_image(t_mlx *mlx, t_obj *obj, t_spot *spot)
+int		fill_image(t_mlx *mlx, t_obj *obj, t_spot *spot)
 {
-  int	x;
-  int	y;
-  int	color;
-  t_eye	eye;
+  int		x;
+  int		y;
+  int		color;
+  t_eye		eye;
 
   init_eye(&eye);
   y = 0;

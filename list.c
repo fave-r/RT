@@ -1,11 +1,11 @@
 /*
 ** list.c for rtv1 in /home/thibaud/rendu/MUL_2013_rtv1
-** 
+**
 ** Made by thibaud
 ** Login   <thibaud@epitech.net>
-** 
+**
 ** Started on  Wed Feb 26 14:16:33 2014 thibaud
-** Last update Sun Mar 16 20:44:04 2014 thibaud
+** Last update Thu Apr 24 14:40:33 2014 romaric
 */
 
 #include "rtv1.h"
@@ -41,10 +41,10 @@ int		ad_spot(t_spot *list, int x, int y, int z, int color)
   return (0);
 }
 
-t_obj   *creat_obj_list()
+t_obj		*creat_obj_list()
 {
-  t_obj *root;
-  int   color;
+  t_obj		*root;
+  int		color;
 
   color = 0x000000;
   if ((root = malloc(sizeof (t_obj ))) == NULL)
@@ -57,9 +57,10 @@ t_obj   *creat_obj_list()
   return (root);
 }
 
-int     ad_obj(t_obj *list, char *type, int R, int color, t_vec3 *pos, t_vec3 *angle)
+int		ad_obj(t_obj *list, char *type
+		       , int R, int color, t_vec3 *pos, t_vec3 *angle)
 {
-  t_obj *new_elem;
+  t_obj		*new_elem;
 
   while (list->next != NULL)
     list = list->next;
