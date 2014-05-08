@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 ** 
 ** Started on  Wed Feb 26 16:30:55 2014 thibaud
-** Last update Sun Mar 16 20:55:27 2014 thibaud
+** Last update Thu May  8 16:32:27 2014 thibaud
 */
 
 #include "rtv1.h"
@@ -39,7 +39,7 @@ int     init_eye(t_eye *eye)
   eye->pos->z = 50;
   eye->rotation->x = 0;
   eye->rotation->y = 0;
-  eye->rotation->z = 90;
+  eye->rotation->z = 0;
   return (0);
 }
 
