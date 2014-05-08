@@ -5,14 +5,14 @@
 ## Login   <thibaud@epitech.net>
 ##
 ## Started on  Mon Oct 21 09:07:38 2013 thibaud
-## Last update Thu Apr 24 14:47:53 2014 bourrel
+## Last update Wed May  7 14:17:14 2014 bourrel
 ##
 
-CC=		gcc
+CC=		clang
 
 RM=		rm -f
 
-CFLAGS=		-Wextra -Wall -Werror
+CFLAGS=		-Wextra -Wall
 
 NAME=		rt
 
@@ -29,7 +29,10 @@ SRCS=		main.c \
 		moove_obj_next.c \
 		ombre.c \
 		free.c \
-		light.c
+		light.c \
+		parser/parser.c \
+		parser/new_obj.c \
+		lib/get_next_line.c
 
 MINLIB=		-lmlx -L/usr/lib64 -lXext -lX11 -L/usr/lib64/X11 -lm
 

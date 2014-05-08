@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Tue Feb 11 19:30:01 2014 thibaud
-** Last update Thu Apr 24 14:37:50 2014 romaric
+** Last update Thu May  8 14:45:01 2014 bourrel
 */
 
 #include <float.h>
@@ -102,7 +102,7 @@ int		map_1(t_obj *obj, t_spot *spot)
   return (0);
 }
 
-int		main()
+int		main(int ac, char **av)
 {
   t_mlx		mlx;
   t_obj		*obj;
@@ -116,7 +116,13 @@ int		main()
   mlx = get_data(mlx);
   obj = creat_obj_list();
   spot = creat_spot_list();
-  map_1(obj, spot);
+  if (ac != 1)
+    {
+      if ((parser(av[1], tab, obj, spot)) == -1)
+	return (-1);
+    }
+  else
+    map_1(obj, spot);
   fill_image(&mlx, obj, spot);
   mlx_put_image_to_window(mlx.mlx_ptr, mlx.win_ptr, mlx.img_ptr, 0, 0);
   free_all(obj, spot);

@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 ** 
 ** Started on  Tue Feb 11 19:30:33 2014 thibaud
-** Last update Sun Mar 16 20:56:28 2014 thibaud
+** Last update Thu May  8 14:41:42 2014 bourrel
 */
 
 #ifndef MY_RTV1_H_
@@ -16,6 +16,7 @@
 #include <math.h>
 #include "mlx.h"
 
+#define	BUFF_SIZE 1024
 #define WIN_SIZE 600
 #define ZERO 0.000000001
 #define BLEU 0x0000FF
@@ -76,6 +77,13 @@ typedef struct	s_eye
   t_vec3	*rotation;
 }		t_eye;
 
+typedef struct	s_var
+{
+  int		i;
+  int		nb_read;
+  char		*buffer;
+}		t_var;
+
 t_flag	tab[6];
 
 t_spot	*creat_spot_list();
@@ -131,5 +139,10 @@ int	free_objs(t_obj *);
 int	free_spots(t_spot *);
 int	free_all(t_obj *, t_spot *);
 int	free_eye(t_eye);
+
+int	parser(char*, t_flag[], t_obj*, t_spot*);
+void	new_obj(char*, t_obj*, int, char*);
+void	new_spot(char*, t_spot*, int);
+char	*get_next_line(int);
 
 #endif
