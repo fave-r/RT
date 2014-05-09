@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 ** 
 ** Started on  Tue Feb 11 19:30:33 2014 thibaud
-** Last update Thu May  8 14:41:42 2014 bourrel
+** Last update Fri May  9 14:17:52 2014 bourrel
 */
 
 #ifndef MY_RTV1_H_
@@ -141,8 +141,14 @@ int	free_all(t_obj *, t_spot *);
 int	free_eye(t_eye);
 
 int	parser(char*, t_flag[], t_obj*, t_spot*);
-void	new_obj(char*, t_obj*, int, char*);
-void	new_spot(char*, t_spot*, int);
+void	new_obj(char**, t_obj*);
+void	new_spot(char**, t_spot*);
 char	*get_next_line(int);
+char	**my_str_to_wordtab(char *, char *);
+int	my_strchr(char, char *);
+char	*my_epur_str(char*);
+int	my_strcompare(char *, char*);
+int	my_strncompare(char*, char*, int);
+void	*xmalloc(int);
 
 #endif

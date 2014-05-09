@@ -5,41 +5,75 @@
 ** Login   <leo@epitech.net>
 ** 
 ** Started on  Wed May  7 01:24:27 2014 bourrel
-** Last update Thu May  8 22:46:28 2014 bourrel
+** Last update Fri May  9 15:17:09 2014 bourrel
 */
 
 #include <string.h>
 #include "../rtv1.h"
 
-int     find_nbr(char *str, int *i)
+char		*cpy_nbr(char *str, int i)
 {
-  int   ret;
-  char  *nb;
-  int   j;
-  int	neg;
+  char		*cpy;
+  int	j;
 
-  ret = 0;
   j = 0;
-  neg = 0;
-  nb = malloc(sizeof(*nb) * strlen(str));
-  if (str[*i] == '-')
+  cpy = malloc(sizeof(*cpy) * strlen(str) + 1);
+  while (str[i])
     {
-      neg = 1;
-      *i = *i + 1;
-    }
-  while (str[*i] >= '0' && str[*i] <= '9')
-    {
-      nb[j] = str[*i];
+      cpy[j] = str[i];
       j++;
-      *i = *i + 1;
+      i++;
     }
-  ret = atoi(nb);
-  if (neg == 1)
-    return (-ret);
-  return (ret);
+  return (str);
 }
 
-void		new_spot(char *str, t_spot *spot, int i)
+int	is_color(char *str)
+{
+  if (my_strcompare("BLEU", str))
+    return (BLEU);
+  else if (my_strcompare("CYAN", str))
+    return (CYAN);
+  else if (my_strcompare("JAUNE", str))
+    return (JAUNE);
+  else if (my_strcompare("MAGENTA", str))
+    return (MAGENTA);
+  else if (my_strcompare("ROUGE", str))
+    return (ROUGE);
+  else if (my_strcompare("VERT", str))
+    return (VERT);
+  else if (my_strcompare("NOIR", str))
+    return (NOIR);
+  else if (my_strcompare("BLANC", str))
+    return (BLANC);
+  else if (my_strcompare("ORANGE", str))
+    return (ORANGE);
+  else
+    return (-1);
+}
+
+int		find_color(char *str)
+{
+  char	*cpy;
+  int	ret;
+
+  ret = 0;
+  if (my_strncompare("0x", str, 2))
+    {
+      cpy = cpy_nbr(str, 2);
+      ret = atoi(cpy);
+      return (ret);
+    }
+  else if (str[0] >= '0' && str[0] <= '9')
+    return (atoi(str));
+  else if ((str[0] >= 'a' && str[0] <= 'z')
+	   || (str[0] >= 'A' && str[0] <= 'Z'))
+    return (is_color(str));
+  else
+    return (-1);
+  return (1);
+}
+
+void		new_spot(char **tmp, t_spot *spot)
 {
   int		nbr[3];
   int		j;
@@ -48,42 +82,34 @@ void		new_spot(char *str, t_spot *spot, int i)
   j = 0;
   while (j < 3)
     {
-      if (((str[i] >= '0' && str[i] <= '9') || str[i] == '-') && j < 3)
-	{
-	  nbr[j] = find_nbr(str, &i);
-	  j++;
-	}
-      i++;
+      nbr[j] = atoi(tmp[j + 1]);
+      j++;
     }
   init_obj_pos(nbr[0], nbr[1], nbr[2], &pos);
-  printf("Pos X :%d\nPos Y : %d\nPOS Z : %d\n\n", nbr[0], nbr[1], nbr[2]);
   ad_spot(spot, nbr[0], nbr[1], nbr[2], ROUGE);
 }
 
-void		new_obj(char *str, t_obj *list, int i, char *type)
+void		new_obj(char **tmp, t_obj *list)
 {
-  int		nbr[3];
+  int		nbr[6];
   int		j;
   t_vec3	rot;
   t_vec3	pos;
+  int		color;
 
-  j = -1;
-  while (j < 2)
+  j = 0;
+  while (j < 6)
     {
-      if ((str[i] >= '0' && str[i] <= '9') && j < 3)
-	nbr[++j] = find_nbr(str, &i);
-      i++;
+      nbr[j] = atoi(tmp[j + 1]);
+      j++;
     }
+  if ((color = find_color(tmp[7])) == -1)
+    exit (-1);
   init_obj_pos(nbr[0], nbr[1], nbr[2], &pos);
-  j = -1;
-  while (j < 2)
-    {
-      if ((str[i] >= '0' && str[i] <= '9') && j < 3)
-	nbr[++j] = find_nbr(str, &i);
-      i++;
-    }
-  init_obj_angle(nbr[0], nbr[1], nbr[2], &rot);
-  printf("Pos X : %f\nPos Y : %f\nPOS Z : %f\n", pos.x, pos.y, pos.z);
-  printf("Rot X : %f\nRot Y : %f\nROT Z : %f\n", rot.x, rot.y, rot.z);
-  ad_obj(list, type, 100, ROUGE, &pos, &rot);
+  init_obj_angle(nbr[3], nbr[4], nbr[5], &rot);
+  printf("%s\n%f\t%f\t%f\n%f\t%f\t%f\n\n", tmp[0],pos.x, pos.y, pos.z, rot.x, rot.y, rot.z);
+  if (my_strcompare("CONE", tmp[0]) || my_strcompare("cone", tmp[0]))
+    ad_obj(list, tmp[0], 3, color, &pos, &rot);
+  else
+    ad_obj(list, tmp[0], 100, color, &pos, &rot);
 }

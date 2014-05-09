@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Tue Feb 11 19:30:01 2014 thibaud
-** Last update Thu May  8 14:45:01 2014 bourrel
+** Last update Fri May  9 14:07:35 2014 bourrel
 */
 
 #include <float.h>
@@ -77,31 +77,6 @@ int		fill_image(t_mlx *mlx, t_obj *obj, t_spot *spot)
   return (0);
 }
 
-int		map_1(t_obj *obj, t_spot *spot)
-{
-  t_vec3	obj_pos;
-  t_vec3	obj_angle;
-
-  ad_spot(spot, ZERO - 2000, ZERO, ZERO + 2000, 0x000000);
-  ad_spot(spot, ZERO - 2000, ZERO - 1000, ZERO + 2000, 0x000000);
-  init_obj_angle(ZERO, ZERO, ZERO, &obj_angle);
-  init_obj_pos(ZERO, ZERO, ZERO - 200, &obj_pos);
-  ad_obj(obj, "PLAN", 100, BLEU, &obj_pos, &obj_angle);
-  init_obj_angle(ZERO, ZERO, ZERO, &obj_angle);
-  init_obj_pos(ZERO, ZERO - 200, ZERO + 200, &obj_pos);
-  ad_obj(obj, "SPHERE", 100, ROUGE, &obj_pos, &obj_angle);
-  init_obj_angle(ZERO, ZERO, ZERO, &obj_angle);
-  init_obj_pos(ZERO - 300, ZERO + 100, ZERO + 20, &obj_pos);
-  ad_obj(obj, "SPHERE", 100, JAUNE, &obj_pos, &obj_angle);
-  init_obj_angle(ZERO, ZERO, ZERO, &obj_angle);
-  init_obj_pos(ZERO, ZERO + 50, ZERO + 200, &obj_pos);
-  ad_obj(obj, "CONE", 3, VERT, &obj_pos, &obj_angle);
-  init_obj_angle(ZERO, ZERO, ZERO, &obj_angle);
-  init_obj_pos(ZERO - 100, ZERO + 300, ZERO, &obj_pos);
-  ad_obj(obj, "CYLINDRE", 100, ORANGE, &obj_pos, &obj_angle);
-  return (0);
-}
-
 int		main(int ac, char **av)
 {
   t_mlx		mlx;
@@ -116,13 +91,13 @@ int		main(int ac, char **av)
   mlx = get_data(mlx);
   obj = creat_obj_list();
   spot = creat_spot_list();
-  if (ac != 1)
+  if (ac == 2)
     {
       if ((parser(av[1], tab, obj, spot)) == -1)
 	return (-1);
     }
   else
-    map_1(obj, spot);
+    return (-1);
   fill_image(&mlx, obj, spot);
   mlx_put_image_to_window(mlx.mlx_ptr, mlx.win_ptr, mlx.img_ptr, 0, 0);
   free_all(obj, spot);
