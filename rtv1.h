@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 ** 
 ** Started on  Tue Feb 11 19:30:33 2014 thibaud
-** Last update Fri May  9 14:17:52 2014 bourrel
+** Last update Sat May 10 00:11:16 2014 bourrel
 */
 
 #ifndef MY_RTV1_H_
@@ -150,5 +150,9 @@ char	*my_epur_str(char*);
 int	my_strcompare(char *, char*);
 int	my_strncompare(char*, char*, int);
 void	*xmalloc(int);
+int	is_in_tab(char*, t_flag[]);
+void    check_spot(char **, int);
+void    check_obj(char **, int);
+
 
 #endif

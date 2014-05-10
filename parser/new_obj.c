@@ -5,27 +5,11 @@
 ** Login   <leo@epitech.net>
 ** 
 ** Started on  Wed May  7 01:24:27 2014 bourrel
-** Last update Fri May  9 15:17:09 2014 bourrel
+** Last update Sat May 10 15:50:43 2014 bourrel
 */
 
 #include <string.h>
 #include "../rtv1.h"
-
-char		*cpy_nbr(char *str, int i)
-{
-  char		*cpy;
-  int	j;
-
-  j = 0;
-  cpy = malloc(sizeof(*cpy) * strlen(str) + 1);
-  while (str[i])
-    {
-      cpy[j] = str[i];
-      j++;
-      i++;
-    }
-  return (str);
-}
 
 int	is_color(char *str)
 {
@@ -51,63 +35,25 @@ int	is_color(char *str)
     return (-1);
 }
 
-int		find_color(char *str)
-{
-  char	*cpy;
-  int	ret;
-
-  ret = 0;
-  if (my_strncompare("0x", str, 2))
-    {
-      cpy = cpy_nbr(str, 2);
-      ret = atoi(cpy);
-      return (ret);
-    }
-  else if (str[0] >= '0' && str[0] <= '9')
-    return (atoi(str));
-  else if ((str[0] >= 'a' && str[0] <= 'z')
-	   || (str[0] >= 'A' && str[0] <= 'Z'))
-    return (is_color(str));
-  else
-    return (-1);
-  return (1);
-}
-
 void		new_spot(char **tmp, t_spot *spot)
 {
-  int		nbr[3];
-  int		j;
-  t_vec3        pos;
+  int		color;
 
-  j = 0;
-  while (j < 3)
-    {
-      nbr[j] = atoi(tmp[j + 1]);
-      j++;
-    }
-  init_obj_pos(nbr[0], nbr[1], nbr[2], &pos);
-  ad_spot(spot, nbr[0], nbr[1], nbr[2], ROUGE);
+  if ((color = is_color(tmp[4])) == -1)
+    exit (-1);
+  ad_spot(spot, atoi(tmp[3]), atoi(tmp[1]), atoi(tmp[2]), color);
 }
 
 void		new_obj(char **tmp, t_obj *list)
 {
-  int		nbr[6];
-  int		j;
   t_vec3	rot;
   t_vec3	pos;
   int		color;
 
-  j = 0;
-  while (j < 6)
-    {
-      nbr[j] = atoi(tmp[j + 1]);
-      j++;
-    }
-  if ((color = find_color(tmp[7])) == -1)
+  if ((color = is_color(tmp[7])) == -1)
     exit (-1);
-  init_obj_pos(nbr[0], nbr[1], nbr[2], &pos);
-  init_obj_angle(nbr[3], nbr[4], nbr[5], &rot);
-  printf("%s\n%f\t%f\t%f\n%f\t%f\t%f\n\n", tmp[0],pos.x, pos.y, pos.z, rot.x, rot.y, rot.z);
+  init_obj_pos(atoi(tmp[3]), atoi(tmp[1]), atoi(tmp[2]), &pos);
+  init_obj_angle(atoi(tmp[4]), atoi(tmp[5]), atoi(tmp[6]), &rot);
   if (my_strcompare("CONE", tmp[0]) || my_strcompare("cone", tmp[0]))
     ad_obj(list, tmp[0], 3, color, &pos, &rot);
   else

@@ -5,7 +5,7 @@
 ** Login   <leo@epitech.net>
 ** 
 ** Started on  Mon May  5 16:49:21 2014 bourrel
-** Last update Fri May  9 14:19:38 2014 bourrel
+** Last update Sat May 10 00:31:34 2014 bourrel
 */
 
 #include <string.h>
@@ -13,17 +13,17 @@
 #include <unistd.h>
 #include "../rtv1.h"
 
-char	**epur_tab(char **tmp)
+void	free_tab(char **tmp)
 {
   int	i;
 
   i = 0;
   while (tmp[i])
     {
-      tmp[i] = my_epur_str(tmp[i]);
+      free(tmp[i]);
       i++;
     }
-  return (tmp);
+  free(tmp);
 }
 
 int	is_in_tab(char *str, t_flag tab[])
@@ -40,19 +40,26 @@ int	is_in_tab(char *str, t_flag tab[])
   return (0);
 }
 
-void	fill_list(char **tmp, t_flag tab[], t_obj *obj, t_spot *spot)
+void		fill_list(char **tmp, t_flag tab[], t_obj *obj, t_spot *spot)
 {
-  int		i;
-  static int	line = 0;
+  static int	i = 0;
 
-  i = 0;
-  line++;
+  i++;
   if (is_in_tab(tmp[0], tab) == 1)
-    new_obj(tmp, obj);
+    {
+      check_obj(tmp, i);
+      new_obj(tmp, obj);
+    }
   else if (my_strcompare("SPOT", tmp[0]))
-    new_spot(tmp, spot);
+    {
+      check_spot(tmp, i);
+      new_spot(tmp, spot);
+    }
   else
-    printf("File incorrect line : %d\n", line);
+    {
+      printf("Unknown object line %d\n", i);
+      exit (-1);
+    }
 }
 
 int		parser(char *name, t_flag tab[], t_obj *obj, t_spot *spot)
@@ -61,17 +68,18 @@ int		parser(char *name, t_flag tab[], t_obj *obj, t_spot *spot)
   char		*str;
   char		**tmp;
 
-  str = NULL;
   if ((fd = open(name, O_RDONLY)) == -1)
     {
       printf("Cannot read file %s\n", name);
       return (-1);
     }
-  while ((str = get_next_line(fd)) != NULL)
+  while ((str = get_next_line(fd)))
     {
-      tmp = my_str_to_wordtab(str, ",:");
-      tmp = epur_tab(tmp);
-      fill_list(tmp, tab, obj, spot);
+      if (str[1])
+	{
+	  tmp = my_str_to_wordtab(str, ", :\t");
+	  fill_list(tmp, tab, obj, spot);
+	}
     }
   close (fd);
   return (1);
