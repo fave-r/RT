@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Thu Feb 20 00:54:53 2014 thibaud
-** Last update Thu Apr 24 14:45:06 2014 romaric
+** Last update Thu May  8 16:42:53 2014 thibaud
 */
 
 #include "rtv1.h"
@@ -43,16 +43,16 @@ void		rotZ(t_vec3 *vec, float angle)
   vec->y = sinf(angle) * tmp[0] + cosf(angle) * tmp[1];
 }
 
-void            rotate_all(t_vec3 *pos, t_vec3 *angle)
+void            rotate_all(t_vec3 *dir, t_vec3 *angle)
 {
-  rotX(pos, rad_conv(angle->x));
-  rotY(pos, rad_conv(angle->y));
-  rotZ(pos, rad_conv(angle->z));
+  rotX(dir, rad_conv(angle->x));
+  rotY(dir, rad_conv(angle->y));
+  rotZ(dir, rad_conv(angle->z));
 }
 
-void            rotate_all_inv(t_vec3 *pos, t_vec3 *angle)
+void            rotate_all_inv(t_vec3 *dir, t_vec3 *angle)
 {
-  rotX(pos, -rad_conv(angle->x));
-  rotY(pos, -rad_conv(angle->y));
-  rotZ(pos, -rad_conv(angle->z));
+  rotX(dir, -rad_conv(angle->x));
+  rotY(dir, -rad_conv(angle->y));
+  rotZ(dir, -rad_conv(angle->z));
 }

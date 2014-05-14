@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Wed Feb 26 16:15:20 2014 thibaud
-** Last update Thu Apr 24 14:38:43 2014 romaric
+** Last update Thu May  8 18:18:35 2014 thibaud
 */
 
 #include "rtv1.h"
@@ -44,7 +44,7 @@ t_vec3		*norme_cylindre(t_vec3 *inter)
     exit(-1);
   result->x = inter->x;
   result->y = inter->y;
-  result->z = inter->z * 0 + 200;
+  result->z = inter->z * 0.2 + 200;
   return (result);
 }
 
@@ -56,6 +56,6 @@ t_vec3		*norme_cone(t_vec3 *inter)
     exit(-1);
   result->x = inter->x;
   result->y = inter->y;
-  result->z = inter->z * 0 + 50;
+  result->z = inter->z * 0.2 + 50;
   return (result);
 }
