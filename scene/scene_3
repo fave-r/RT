@@ -1,2 +1,7 @@
-CONE            : 0, 0, 0, 0, 0, 0, BLEU
-SPOT            : 100, -2000, 1500, ROUGE
+PLAN		: -200, 0, 0, 0, 0, 0, BLEU
+SPHERE          : 200, 0, 200, 0, 0, 0, ROUGE
+SPHERE          : 20, -300, 100, 0, 0, 0, JAUNE
+CONE            : 200, 00, 50, 0, 0, 0, VERT
+CYLINDRE        : 300, 0, -100, 0, 0, 0, ORANGE
+SPOT            : 2000, 2000, 0, BLANC
+SPOT            : 2000, 2000, -1000, BLANC

@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Sat Mar 15 19:36:13 2014 thibaud
-** Last update Thu Apr 24 14:34:21 2014 romaric
+** Last update Wed May 14 11:43:43 2014 bourrel
 */
 
 #include "rtv1.h"
@@ -27,7 +27,7 @@ int		find_type(t_obj *obj)
   i = 0;
   while (my_strcmp(tab[i].type, "\0") != 0)
     {
-      if ((my_strcmp(tab[i].type, obj->type) == 0))
+      if ((my_strcmp(tab[i].type, obj->info->type) == 0))
         return (i);
       i++;
     }

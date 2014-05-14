@@ -5,7 +5,7 @@
 ** Login   <leo@epitech.net>
 ** 
 ** Started on  Fri May  9 17:30:45 2014 bourrel
-** Last update Sat May 10 00:28:47 2014 bourrel
+** Last update Mon May 12 16:44:07 2014 bourrel
 */
 
 #include <stdio.h>
@@ -46,15 +46,15 @@ void	check_obj(char **tab, int line)
   i = 0;
   while (tab[i] != NULL)
     i++;
-  if (i != 8)
+  if (i != 9)
     {
       printf("Invalid number of argument line %d\n", line);
       exit (-1);
     }
   i = 0;
-  while (++i < 7)
+  while (++i < 8)
     check_nbr(tab[i], line, i);
-  check_color(tab[7], line);
+  check_color(tab[8], line);
 }
 
 void    check_spot(char **tab, int line)

@@ -5,26 +5,13 @@
 ** Login   <leo@epitech.net>
 ** 
 ** Started on  Mon May  5 16:49:21 2014 bourrel
-** Last update Sat May 10 00:31:34 2014 bourrel
+** Last update Mon May 12 16:11:09 2014 bourrel
 */
 
 #include <string.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include "../rtv1.h"
-
-void	free_tab(char **tmp)
-{
-  int	i;
-
-  i = 0;
-  while (tmp[i])
-    {
-      free(tmp[i]);
-      i++;
-    }
-  free(tmp);
-}
 
 int	is_in_tab(char *str, t_flag tab[])
 {
@@ -75,12 +62,14 @@ int		parser(char *name, t_flag tab[], t_obj *obj, t_spot *spot)
     }
   while ((str = get_next_line(fd)))
     {
-      if (str[1])
+      if (str[0])
 	{
 	  tmp = my_str_to_wordtab(str, ", :\t");
 	  fill_list(tmp, tab, obj, spot);
+	  free (str);
 	}
     }
+  free_tab(tmp);
   close (fd);
   return (1);
 }

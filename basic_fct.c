@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Wed Feb 26 14:26:20 2014 thibaud
-** Last update Thu Apr 24 14:39:02 2014 romaric
+** Last update Mon May 12 16:04:07 2014 bourrel
 */
 
 #include "rtv1.h"
@@ -15,6 +15,10 @@ int     my_strcmp(char *s1, char *s2)
   int   i;
 
   i = 0;
+  if (!s1)
+    return (-1);
+  else if (!s2)
+    return (1);
   while (s1[i])
     {
       if (s1[i] < s2[i])

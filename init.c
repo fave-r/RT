@@ -5,10 +5,17 @@
 ** Login   <thibaud@epitech.net>
 ** 
 ** Started on  Wed Feb 26 16:30:55 2014 thibaud
-** Last update Thu May  8 16:32:27 2014 thibaud
+** Last update Wed May 14 11:36:31 2014 bourrel
 */
 
 #include "rtv1.h"
+
+void	init_info(char *type, int R, int color, t_info *info)
+{
+  info->type = type;
+  info->R = R;
+  info->color = color;
+}
 
 void    init_spot(t_spot *spot)
 {

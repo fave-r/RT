@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Thu Mar  6 20:34:38 2014 thibaud
-** Last update Thu Apr 24 14:36:45 2014 romaric
+** Last update Wed May 14 11:44:26 2014 bourrel
 */
 
 #include "rtv1.h"
@@ -34,7 +34,7 @@ int		gere_light(t_eye *eye, float k2
 
   ombre_nb = 0;
   cur_spot = spot->next;
-  color = clos_obj->color;
+  color = clos_obj->info->color;
   while (cur_spot != NULL)
     {
       luminosite(eye, k2, clos_obj, cur_spot, color);
