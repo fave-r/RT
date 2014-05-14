@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 ** 
 ** Started on  Tue Feb 11 19:30:33 2014 thibaud
-** Last update Thu May  8 16:39:18 2014 thibaud
+** Last update Wed May 14 13:50:12 2014 thibaud
 */
 
 #ifndef MY_RTV1_H_
@@ -16,6 +16,7 @@
 #include <math.h>
 #include "mlx.h"
 
+#define	BUFF_SIZE 1024
 #define WIN_SIZE 600
 #define ZERO 0.000000001
 #define BLEU 0x0000FF
@@ -52,13 +53,18 @@ typedef struct	s_spot
   struct s_spot	*next;
 }		t_spot;
 
+typedef struct	s_info
+{
+  char		*type;
+  int		color;
+  int		R;
+}		t_info;
+
 typedef struct	s_obj
 {
   t_vec3	*pos;
   t_vec3	*angle;
-  char		*type;
-  int		color;
-  int		R;
+  t_info	*info;
   struct s_obj	*next;
 }		t_obj;
 
@@ -76,12 +82,19 @@ typedef struct	s_eye
   t_vec3	*rotation;
 }		t_eye;
 
+typedef struct	s_var
+{
+  int		i;
+  int		nb_read;
+  char		*buffer;
+}		t_var;
+
 t_flag	tab[6];
 
 t_spot	*creat_spot_list();
-int	ad_spot(t_spot *, int, int, int, int);
+int	ad_spot(t_spot *, int, t_vec3 *);
 t_obj	*creat_obj_list();
-int	ad_obj(t_obj *, char *, int, int, t_vec3 *, t_vec3 *);
+int	ad_obj(t_obj *, t_info *, t_vec3 *, t_vec3 *);
 int	fill_image(t_mlx *, t_obj *, t_spot *);
 float	inter_sphere(t_vec3 *, t_vec3 *, int);
 float	inter_cylindre(t_vec3 *, t_vec3 *, int);
@@ -131,5 +144,21 @@ int	free_objs(t_obj *);
 int	free_spots(t_spot *);
 int	free_all(t_obj *, t_spot *);
 int	free_eye(t_eye);
+void	init_info(char*, int, int, t_info*);
+
+int	parser(char*, t_flag[], t_obj*, t_spot*);
+void	new_obj(char**, t_obj*);
+void	new_spot(char**, t_spot*);
+char	*get_next_line(int);
+char	**my_str_to_wordtab(char *, char *);
+int	my_strchr(char, char *);
+char	*my_epur_str(char*);
+int	my_strcompare(char *, char*);
+int	my_strncompare(char*, char*, int);
+void	*xmalloc(int);
+int	is_in_tab(char*, t_flag[]);
+void    check_spot(char **, int);
+void    check_obj(char **, int);
+void	free_tab(char**);
 
 #endif

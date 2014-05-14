@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Wed Feb 26 14:21:52 2014 thibaud
-** Last update Thu Apr 24 14:39:53 2014 romaric
+** Last update Wed May 14 12:04:52 2014 bourrel
 */
 
 #include "rtv1.h"
@@ -52,7 +52,6 @@ float		cut_obj(float k1, t_vec3 *pos, t_vec3 *dir, float x, float y)
 
   eye_tmp.pos = pos;
   eye_tmp.dir = dir;
-
   inter = inter_obj(&eye_tmp, k1);
   if (inter->z < x || inter->z > y)
     return (ZERO);

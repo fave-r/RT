@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Wed Feb 26 14:16:33 2014 thibaud
-** Last update Thu Apr 24 14:40:33 2014 romaric
+** Last update Wed May 14 11:58:10 2014 bourrel
 */
 
 #include "rtv1.h"
@@ -24,7 +24,7 @@ t_spot		*creat_spot_list()
   return (root);
 }
 
-int		ad_spot(t_spot *list, int x, int y, int z, int color)
+int		ad_spot(t_spot *list, int color, t_vec3 *pos)
 {
   t_spot        *new_elem;
 
@@ -33,9 +33,9 @@ int		ad_spot(t_spot *list, int x, int y, int z, int color)
   if ((new_elem = malloc(sizeof (t_spot))) == NULL)
     exit(-1);
   new_elem->next = NULL;
-  new_elem->x = x;
-  new_elem->y = y;
-  new_elem->z = z;
+  new_elem->x = pos->x;
+  new_elem->y = pos->y;
+  new_elem->z = pos->z;
   new_elem->color = color;
   list->next = new_elem;
   return (0);
@@ -50,15 +50,13 @@ t_obj		*creat_obj_list()
   if ((root = malloc(sizeof (t_obj ))) == NULL)
     exit(-1);
   root->next = NULL;
-  root->color = color;
-  root->R = 0;
-  root->type = NULL;
+  root->info = NULL;
   root->angle = NULL;
+  root->pos = NULL;
   return (root);
 }
 
-int		ad_obj(t_obj *list, char *type
-		       , int R, int color, t_vec3 *pos, t_vec3 *angle)
+int		ad_obj(t_obj *list, t_info *info, t_vec3 *pos, t_vec3 *angle)
 {
   t_obj		*new_elem;
 
@@ -67,12 +65,15 @@ int		ad_obj(t_obj *list, char *type
   if ((new_elem = malloc(sizeof (t_obj))) == NULL)
     exit(-1);
   new_elem->next = NULL;
-  new_elem->R = R;
-  new_elem->color = color;
-  if ((new_elem->pos = malloc(sizeof (pos))) == NULL)
+  if ((new_elem->info = malloc(sizeof (*info))) == NULL)
+    exit (-1);
+  if ((new_elem->pos = malloc(sizeof (*pos))) == NULL)
     exit(-1);
-  if ((new_elem->angle = malloc(sizeof (angle))) == NULL)
+  if ((new_elem->angle = malloc(sizeof (*angle))) == NULL)
     exit(-1);
+  new_elem->info->type = info->type;
+  new_elem->info->R = info->R;
+  new_elem->info->color = info->color;
   new_elem->pos->x = pos->x;
   new_elem->pos->y = pos->y;
   new_elem->pos->z = pos->z;
@@ -80,6 +81,5 @@ int		ad_obj(t_obj *list, char *type
   new_elem->angle->y = angle->y;
   new_elem->angle->z = angle->z;
   list->next = new_elem;
-  new_elem->type = type;
   return (0);
 }

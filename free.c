@@ -5,10 +5,23 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Sun Mar 16 20:46:52 2014 thibaud
-** Last update Thu Apr 24 14:35:16 2014 romaric
+** Last update Mon May 12 16:09:36 2014 bourrel
 */
 
 #include "rtv1.h"
+
+void	free_tab(char **tmp)
+{
+  int	i;
+
+  i = 0;
+  while (tmp[i])
+    {
+      free(tmp[i]);
+      i++;
+    }
+  free(tmp);
+}
 
 int		free_eye(t_eye eye)
 {
