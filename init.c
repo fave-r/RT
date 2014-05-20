@@ -5,11 +5,7 @@
 ** Login   <thibaud@epitech.net>
 ** 
 ** Started on  Wed Feb 26 16:30:55 2014 thibaud
-<<<<<<< HEAD
-** Last update Thu May  8 16:46:36 2014 thibaud
-=======
-** Last update Wed May 14 11:36:31 2014 bourrel
->>>>>>> 1721af264d0d2b50ef22ef68333e9dc06c2ef26b
+** Last update Wed May 14 17:06:01 2014 bourrel
 */
 
 #include "rtv1.h"

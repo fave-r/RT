@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Tue Feb 11 19:30:01 2014 thibaud
-** Last update Wed May 14 13:53:25 2014 thibaud
+** Last update Wed May 14 17:07:13 2014 bourrel
 */
 
 #include <float.h>
@@ -83,9 +83,6 @@ int		map_1(t_obj *obj, t_spot *spot)
   t_vec3	obj_angle;
   t_info	info;
 
-  //  init_obj_pos(ZERO - 2000, ZERO, ZERO + 2000, &obj_pos);
-  //ad_spot(spot, ZERO - 2000, ZERO, ZERO + 2000, 0x000000);
-  //ad_spot(spot, ZERO - 2000, ZERO - 1000, ZERO + 2000, 0x000000);
   init_obj_pos(ZERO - 2000, ZERO, ZERO + 2000, &obj_pos);
   ad_spot(spot, 0x000000, &obj_pos);
   init_obj_pos(ZERO - 2000, ZERO - 1000, ZERO + 2000, &obj_pos);
@@ -95,20 +92,9 @@ int		map_1(t_obj *obj, t_spot *spot)
   init_info("PLAN", 100, BLEU, &info);
   ad_obj(obj, &info, &obj_pos, &obj_angle);
   init_obj_angle(ZERO, ZERO, ZERO, &obj_angle);
-  init_obj_pos(ZERO, ZERO, ZERO + 400, &obj_pos);
-  ad_obj(obj, "SPHERE", 100, ROUGE, &obj_pos, &obj_angle);
-  init_obj_angle(ZERO, ZERO, ZERO, &obj_angle);
-  init_obj_pos(ZERO , ZERO + 100, ZERO + 20, &obj_pos);
-  //ad_obj(obj, "SPHERE", 100, JAUNE, &obj_pos, &obj_angle);
-  init_obj_angle(ZERO, ZERO, ZERO, &obj_angle);
-  init_obj_pos(ZERO, ZERO, ZERO + 200, &obj_pos);
-  ad_obj(obj, "CONE", 3, VERT, &obj_pos, &obj_angle);
-  init_obj_angle(ZERO, ZERO, ZERO, &obj_angle);
-  init_obj_pos(ZERO - 100, ZERO + 300, ZERO, &obj_pos);
-  //ad_obj(obj, "CYLINDRE", 100, ORANGE, &obj_pos, &obj_angle);
   init_obj_pos(ZERO, ZERO - 200, ZERO + 200, &obj_pos);
   init_info("SPHERE", 100, ROUGE, &info);
-   ad_obj(obj, &info, &obj_pos, &obj_angle);
+  ad_obj(obj, &info, &obj_pos, &obj_angle);
   init_obj_angle(ZERO, ZERO, ZERO, &obj_angle);
   init_obj_pos(ZERO, ZERO + 50, ZERO + 200, &obj_pos);
   init_info("CONE", 3, VERT, &info);

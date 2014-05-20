@@ -5,7 +5,7 @@
 ** Login   <leo@epitech.net>
 ** 
 ** Started on  Wed May  7 01:24:27 2014 bourrel
-** Last update Wed May 14 11:55:37 2014 bourrel
+** Last update Wed May 14 13:51:34 2014 bourrel
 */
 
 #include <string.h>
@@ -55,7 +55,7 @@ void		new_obj(char **tmp, t_obj *list)
 
   if ((color = is_color(tmp[8])) == -1)
     exit (-1);
-  init_info(tmp[0], atoi(tmp[7]), color, &info); 
+  init_info(tmp[0], atoi(tmp[7]), color, &info);
   init_obj_pos(atoi(tmp[3]), atoi(tmp[1]), atoi(tmp[2]), &pos);
   init_obj_angle(atoi(tmp[4]), atoi(tmp[5]), atoi(tmp[6]), &rot);
   if (my_strcompare("CONE", tmp[0]) || my_strcompare("cone", tmp[0]))
