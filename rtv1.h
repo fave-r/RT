@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 ** 
 ** Started on  Tue Feb 11 19:30:33 2014 thibaud
-** Last update Tue May 27 14:42:07 2014 bourrel
+** Last update Tue May 27 16:02:26 2014 bourrel
 */
 
 #ifndef MY_RTV1_H_
@@ -91,12 +91,18 @@ typedef struct	s_var
   char		*buffer;
 }		t_var;
 
-typedef struct          s_get
+typedef struct	s_get
 {
-  char                  *s;
-  int                   c;
-  int                   l;
-}                       t_get;
+  char		*s;
+  int		c;
+  int		l;
+}		t_get;
+
+typedef struct	s_light
+{
+  float		k2;
+  t_obj		*clos_obj;
+}		t_light;
 
 t_flag	tab[6];
 
@@ -129,10 +135,10 @@ int	init_eye(t_eye *);
 t_vec3	*inter_obj(t_eye *, float);
 t_vec3	*to_light_(t_vec3 *, t_spot *);
 int	put_ombre(int, int);
-int	ombre(t_obj *, t_eye *, t_obj *, float, t_spot *);
+int	ombre(t_obj *, t_eye *, t_light, t_spot *);
 int	place_obj(t_vec3 *, t_vec3 *, t_vec3 *, t_vec3 *);
 int	place_obj_inv(t_vec3 *, t_vec3 *, t_vec3 *, t_vec3 *);
-float	cut_obj(float, t_vec3 *, t_vec3 *, float, float);
+float	cut_obj(float, t_vec3 *, t_vec3 *);
 void	rotX(t_vec3 *, float);
 void	rotY(t_vec3 *, float);
 void	rotZ(t_vec3 *, float);
@@ -144,8 +150,8 @@ int	moove_eye(t_eye *);
 int	moove_eye_back(t_eye *);
 int	find_type(t_obj *);
 int	final_lum(t_spot *);
-int	gere_light(t_eye *, float, t_obj *, t_obj *, t_spot *);
-int	luminosite(t_eye *, float, t_obj *, t_spot *, int);
+int	gere_light(t_eye *, t_light, t_obj *, t_spot *);
+int	luminosite(t_eye *, t_light, t_spot *, int);
 int	ad_color(int, int);
 int	*color_limit(int *);
 int	put_lum(int, float);
@@ -154,7 +160,6 @@ int	free_spots(t_spot *);
 int	free_all(t_obj *, t_spot *);
 int	free_eye(t_eye);
 void	init_info(char*, int, int, t_info*);
-
 int	parser(char*, t_flag[], t_obj*, t_spot*);
 void	new_obj(char**, t_obj*);
 void	new_spot(char**, t_spot*);

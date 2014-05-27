@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Thu Mar  6 20:34:38 2014 thibaud
-** Last update Wed May 14 11:44:26 2014 bourrel
+** Last update Tue May 27 15:57:04 2014 bourrel
 */
 
 #include "rtv1.h"
@@ -25,8 +25,7 @@ int		final_lum(t_spot *spot)
   return (color);
 }
 
-int		gere_light(t_eye *eye, float k2
-			   , t_obj *clos_obj, t_obj *obj, t_spot *spot)
+int		gere_light(t_eye *eye, t_light l, t_obj *obj, t_spot *spot)
 {
   int		color;
   t_spot        *cur_spot;
@@ -34,11 +33,11 @@ int		gere_light(t_eye *eye, float k2
 
   ombre_nb = 0;
   cur_spot = spot->next;
-  color = clos_obj->info->color;
+  color = l.clos_obj->info->color;
   while (cur_spot != NULL)
     {
-      luminosite(eye, k2, clos_obj, cur_spot, color);
-      ombre_nb += ombre(obj, eye, clos_obj, k2, cur_spot);
+      luminosite(eye, l, cur_spot, color);
+      ombre_nb += ombre(obj, eye, l, cur_spot);
       cur_spot = cur_spot->next;
     }
   color = final_lum(spot);
@@ -46,16 +45,15 @@ int		gere_light(t_eye *eye, float k2
   return (color);
 }
 
-int		luminosite(t_eye *eye, float k2
-			   , t_obj *clos_obj, t_spot *spot, int color)
+int		luminosite(t_eye *eye, t_light l, t_spot *spot, int color)
 {
   t_vec3        *inter;
   t_vec3        *vec_light;
   float         result;
   t_vec3        *norme;
 
-  inter = inter_obj(eye, k2);
-  norme = tab[find_type(clos_obj)].norme(inter);
+  inter = inter_obj(eye, l.k2);
+  norme = tab[find_type(l.clos_obj)].norme(inter);
   vec_light = to_light_(inter, spot);
   result = (norme->x * vec_light->x + norme->y
 	    * vec_light->y + norme->z * vec_light->z) /

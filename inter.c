@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Wed Feb 26 14:21:52 2014 thibaud
-** Last update Wed May 14 15:55:35 2014 bourrel
+** Last update Tue May 27 16:02:38 2014 bourrel
 */
 
 #include "rtv1.h"
@@ -45,11 +45,15 @@ float		inter_plan(t_vec3 *pos, t_vec3 *dir, int R)
   return (k);
 }
 
-float		cut_obj(float k1, t_vec3 *pos, t_vec3 *dir, float x, float y)
+float		cut_obj(float k1, t_vec3 *pos, t_vec3 *dir)
 {
   t_eye		eye_tmp;
   t_vec3	*inter;
+  float		x;
+  float		y;
 
+  x = ZERO - 800;
+  y = ZERO;
   eye_tmp.pos = pos;
   eye_tmp.dir = dir;
   inter = inter_obj(&eye_tmp, k1);
@@ -81,7 +85,7 @@ float		inter_cone(t_vec3 *pos, t_vec3 *dir, int R)
       k2 = ((((-1) * c[1]) + sqrt(delta)) / (2 * c[0]));
       if (k2 < k1 && k2 >= ZERO)
 	k1 = k2;
-      return (cut_obj(k1, pos, dir, ZERO - 800, ZERO));
+      return (cut_obj(k1, pos, dir));
     }
   return (k1);
 }

@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Tue Feb 11 19:30:01 2014 thibaud
-** Last update Tue May 27 14:34:08 2014 bourrel
+** Last update Tue May 27 15:55:13 2014 bourrel
 */
 
 #include <float.h>
@@ -23,28 +23,27 @@ t_flag		tab[] =
 
 int		inter_objs(t_eye *eye, t_obj *obj, t_spot *spot)
 {
+  t_light	l;
   t_obj		*cur_obj;
-  t_obj		*clos_obj;
   float		k1;
-  float		k2;
 
   cur_obj = obj->next;
-  clos_obj = NULL;
-  k2 = FLT_MAX;
+  l.clos_obj = NULL;
+  l.k2 = FLT_MAX;
   while (cur_obj != NULL)
     {
       place_obj(eye->pos, eye->dir, cur_obj->pos, cur_obj->angle);
       k1 = tab[find_type(cur_obj)].inter(eye->pos, eye->dir, cur_obj->info->R);
-      if (k1 <= k2 && k1 > ZERO)
+      if (k1 <= l.k2 && k1 > ZERO)
 	{
-	  k2 = k1;
-	  clos_obj = cur_obj;
+	  l.k2 = k1;
+	  l.clos_obj = cur_obj;
 	}
       place_obj_inv(eye->pos, eye->dir, cur_obj->pos, cur_obj->angle);
       cur_obj = cur_obj->next;
     }
-  if (clos_obj != NULL)
-    return (gere_light(eye, k2, clos_obj, obj, spot));
+  if (l.clos_obj != NULL)
+    return (gere_light(eye, l, obj, spot));
   return (0x000000);
 }
 
@@ -122,12 +121,8 @@ int		main(int ac, char **av)
   spot = creat_spot_list();
   if (ac == 2)
     {
-      /*
-      if ((parser_xml(av[1], tab, obj, spot)) == -1)
-	return (-1);
-      */
       if ((parser(av[1], tab, obj, spot)) == -1)
-        return (-1); 
+        return (-1);
     }
   else
     map_1(obj, spot);
