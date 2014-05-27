@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 ** 
 ** Started on  Tue Feb 11 19:30:33 2014 thibaud
-** Last update Wed May 14 13:50:12 2014 thibaud
+** Last update Tue May 27 14:42:07 2014 bourrel
 */
 
 #ifndef MY_RTV1_H_
@@ -14,6 +14,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
+#include <unistd.h>
 #include "mlx.h"
 
 #define	BUFF_SIZE 1024
@@ -89,6 +91,13 @@ typedef struct	s_var
   char		*buffer;
 }		t_var;
 
+typedef struct          s_get
+{
+  char                  *s;
+  int                   c;
+  int                   l;
+}                       t_get;
+
 t_flag	tab[6];
 
 t_spot	*creat_spot_list();
@@ -160,5 +169,7 @@ int	is_in_tab(char*, t_flag[]);
 void    check_spot(char **, int);
 void    check_obj(char **, int);
 void	free_tab(char**);
+int	parser_xml(char *name, t_flag tab[], t_obj *obj, t_spot *spot);
+char	*my_get_next_line(int fd);
 
 #endif

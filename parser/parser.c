@@ -5,7 +5,7 @@
 ** Login   <leo@epitech.net>
 ** 
 ** Started on  Mon May  5 16:49:21 2014 bourrel
-** Last update Wed May 14 15:19:34 2014 bourrel
+** Last update Tue May 27 15:21:10 2014 bourrel
 */
 
 #include <string.h>
@@ -66,10 +66,10 @@ int		parser(char *name, t_flag tab[], t_obj *obj, t_spot *spot)
 	{
 	  tmp = my_str_to_wordtab(str, ", :\t");
 	  fill_list(tmp, tab, obj, spot);
-	  free (str);
+	  free(str);
 	}
     }
   free_tab(tmp);
-  close (fd);
+  close(fd);
   return (1);
 }

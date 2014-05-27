@@ -5,17 +5,16 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Wed Feb 26 14:16:33 2014 thibaud
-** Last update Wed May 14 11:58:10 2014 bourrel
+** Last update Tue May 27 15:16:46 2014 bourrel
 */
 
 #include "rtv1.h"
 
 t_spot		*creat_spot_list()
 {
-  t_spot        *root;
+  t_spot	*root;
 
-  if ((root = malloc(sizeof (t_spot))) == NULL)
-    exit(-1);
+  root = xmalloc(sizeof(t_spot));
   root->x = 0;
   root->y = 0;
   root->z = 0;
@@ -30,8 +29,7 @@ int		ad_spot(t_spot *list, int color, t_vec3 *pos)
 
   while (list->next != NULL)
     list = list->next;
-  if ((new_elem = malloc(sizeof (t_spot))) == NULL)
-    exit(-1);
+  new_elem = xmalloc(sizeof(t_spot));
   new_elem->next = NULL;
   new_elem->x = pos->x;
   new_elem->y = pos->y;
@@ -44,11 +42,8 @@ int		ad_spot(t_spot *list, int color, t_vec3 *pos)
 t_obj		*creat_obj_list()
 {
   t_obj		*root;
-  int		color;
 
-  color = 0x000000;
-  if ((root = malloc(sizeof (t_obj ))) == NULL)
-    exit(-1);
+  root = xmalloc(sizeof(t_obj));
   root->next = NULL;
   root->info = NULL;
   root->angle = NULL;
@@ -62,15 +57,11 @@ int		ad_obj(t_obj *list, t_info *info, t_vec3 *pos, t_vec3 *angle)
 
   while (list->next != NULL)
     list = list->next;
-  if ((new_elem = malloc(sizeof (t_obj))) == NULL)
-    exit(-1);
+  new_elem = xmalloc(sizeof(t_obj));
   new_elem->next = NULL;
-  if ((new_elem->info = malloc(sizeof (*info))) == NULL)
-    exit (-1);
-  if ((new_elem->pos = malloc(sizeof (*pos))) == NULL)
-    exit(-1);
-  if ((new_elem->angle = malloc(sizeof (*angle))) == NULL)
-    exit(-1);
+  new_elem->info = xmalloc(sizeof(*info));
+  new_elem->pos = xmalloc(sizeof(*pos));
+  new_elem->angle = xmalloc(sizeof(*angle));
   new_elem->info->type = info->type;
   new_elem->info->R = info->R;
   new_elem->info->color = info->color;

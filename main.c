@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Tue Feb 11 19:30:01 2014 thibaud
-** Last update Wed May 14 17:07:13 2014 bourrel
+** Last update Tue May 27 14:34:08 2014 bourrel
 */
 
 #include <float.h>
@@ -122,8 +122,12 @@ int		main(int ac, char **av)
   spot = creat_spot_list();
   if (ac == 2)
     {
-      if ((parser(av[1], tab, obj, spot)) == -1)
+      /*
+      if ((parser_xml(av[1], tab, obj, spot)) == -1)
 	return (-1);
+      */
+      if ((parser(av[1], tab, obj, spot)) == -1)
+        return (-1); 
     }
   else
     map_1(obj, spot);

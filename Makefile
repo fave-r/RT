@@ -5,14 +5,14 @@
 ## Login   <thibaud@epitech.net>
 ##
 ## Started on  Mon Oct 21 09:07:38 2013 thibaud
-## Last update Mon May 12 15:36:10 2014 bourrel
+## Last update Tue May 27 15:18:31 2014 bourrel
 ##
 
-CC=		clang
+CC=		gcc
 
 RM=		rm -f
 
-CFLAGS=		-Wextra -Wall -g3 -ggdb3
+CFLAGS=		-W -Werror -Wall -g3 -ggdb3 -I.
 
 NAME=		rt
 

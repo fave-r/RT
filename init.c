@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 ** 
 ** Started on  Wed Feb 26 16:30:55 2014 thibaud
-** Last update Wed May 14 17:06:01 2014 bourrel
+** Last update Tue May 27 15:01:59 2014 bourrel
 */
 
 #include "rtv1.h"
@@ -35,12 +35,9 @@ int     init_obj_pos(float x, float y, float z, t_vec3 *pos)
 
 int     init_eye(t_eye *eye)
 {
-  if ((eye->pos = malloc(sizeof(t_vec3))) == NULL)
-    exit(-1);
-  if ((eye->dir = malloc(sizeof(t_vec3))) == NULL)
-    exit(-1);
-  if ((eye->rotation = malloc(sizeof(t_vec3))) == NULL)
-    exit(-1);
+  eye->pos = xmalloc(sizeof(t_vec3));
+  eye->dir = xmalloc(sizeof(t_vec3));
+  eye->rotation = xmalloc(sizeof(t_vec3));
   eye->pos->x = -1000;
   eye->pos->y = 0;
   eye->pos->z = 50;
