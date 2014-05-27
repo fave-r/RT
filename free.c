@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Sun Mar 16 20:46:52 2014 thibaud
-** Last update Mon May 12 16:09:36 2014 bourrel
+** Last update Tue May 27 23:15:54 2014 bourrel
 */
 
 #include "rtv1.h"
@@ -40,40 +40,36 @@ int		free_all(t_obj *objs, t_spot *spots)
 
 int		free_spots(t_spot *spots)
 {
-  t_spot        *tmp1;
-  t_spot        *tmp2;
 
-  if (spots != NULL)
+  t_spot	*tmp;
+  t_spot	*tmpnxt;
+
+  tmp = spots;
+  while (tmp != NULL)
     {
-      tmp1 = spots;
-      tmp2 = spots->next;
-      while (tmp1 != NULL)
-        {
-          free(tmp1);
-          tmp1 = tmp2;
-          if (tmp2 != NULL)
-            tmp2 = tmp2->next;
-        }
+      tmpnxt = tmp->next;
+      free(tmp);
+      tmp = tmpnxt;
     }
+  spots = tmp;
   return (0);
 }
 
 int		free_objs(t_obj *objs)
 {
-  t_obj		*tmp1;
-  t_obj		*tmp2;
+  t_obj		*tmp;
+  t_obj		*tmpnxt;
 
-  if (objs != NULL)
+  tmp = objs;
+  while (tmp != NULL)
     {
-      tmp1 = objs;
-      tmp2 = objs->next;
-      while (tmp1!= NULL)
-        {
-          free(tmp1);
-          tmp1 = tmp2;
-          if (tmp2 != NULL)
-            tmp2 = tmp2->next;
-        }
+      tmpnxt = tmp->next;
+      free(tmp->pos);
+      free(tmp->angle);
+      free(tmp->info);
+      free(tmp);
+      tmp = tmpnxt;
     }
+  objs = tmp;
   return (0);
 }

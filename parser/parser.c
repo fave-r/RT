@@ -5,7 +5,7 @@
 ** Login   <leo@epitech.net>
 ** 
 ** Started on  Mon May  5 16:49:21 2014 bourrel
-** Last update Tue May 27 15:21:10 2014 bourrel
+** Last update Tue May 27 23:08:39 2014 bourrel
 */
 
 #include <string.h>
@@ -55,6 +55,7 @@ int		parser(char *name, t_flag tab[], t_obj *obj, t_spot *spot)
   char		*str;
   char		**tmp;
 
+  tmp = NULL;
   if ((fd = open(name, O_RDONLY)) == -1)
     {
       printf("Cannot read file %s\n", name);
@@ -64,7 +65,7 @@ int		parser(char *name, t_flag tab[], t_obj *obj, t_spot *spot)
     {
       if (str[0])
 	{
-	  tmp = my_str_to_wordtab(str, ", :\t");
+	  tmp = my_str_to_wordtab(tmp, str, ", :\t");
 	  fill_list(tmp, tab, obj, spot);
 	  free(str);
 	}

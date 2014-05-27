@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Thu Mar  6 16:25:10 2014 thibaud
-** Last update Tue May 27 16:00:01 2014 bourrel
+** Last update Tue May 27 23:27:59 2014 bourrel
 */
 
 #include "rtv1.h"
@@ -14,7 +14,7 @@ t_vec3		*inter_obj(t_eye *eye, float k)
 {
   t_vec3        *result;
 
-  result = xmalloc(sizeof(t_vec3));
+  result = xmalloc(sizeof(*result));
   result->x = eye->pos->x + (k * eye->dir->x);
   result->y = eye->pos->y + (k * eye->dir->y);
   result->z = eye->pos->z + (k * eye->dir->z);
@@ -25,7 +25,7 @@ t_vec3		*to_light_(t_vec3 *inter, t_spot *spot)
 {
   t_vec3        *result;
 
-  result = xmalloc(sizeof(t_vec3));
+  result = xmalloc(sizeof(*result));
   result->x = spot->x - inter->x;
   result->y = spot->y - inter->y;
   result->z = spot->z - inter->z;

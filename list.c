@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Wed Feb 26 14:16:33 2014 thibaud
-** Last update Tue May 27 15:16:46 2014 bourrel
+** Last update Tue May 27 22:54:49 2014 bourrel
 */
 
 #include "rtv1.h"
@@ -72,5 +72,6 @@ int		ad_obj(t_obj *list, t_info *info, t_vec3 *pos, t_vec3 *angle)
   new_elem->angle->y = angle->y;
   new_elem->angle->z = angle->z;
   list->next = new_elem;
+  new_elem = NULL;
   return (0);
 }

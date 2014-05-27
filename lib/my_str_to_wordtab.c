@@ -5,7 +5,7 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Fri Apr 11 15:10:11 2014 romaric
-** Last update Fri May  9 14:10:36 2014 bourrel
+** Last update Tue May 27 23:00:59 2014 bourrel
 */
 
 #include <string.h>
@@ -50,11 +50,10 @@ int	lentab(char *str, char *sep)
   return (nbr_word);
 }
 
-char	**my_str_to_wordtab(char *str, char *sep)
+char	**my_str_to_wordtab(char **tb, char *str, char *sep)
 {
   int	tmp;
   int	j;
-  char	**tb;
   char	*first;
 
   j = 0;
