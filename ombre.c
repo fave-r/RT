@@ -5,16 +5,13 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Thu Mar  6 16:25:10 2014 thibaud
-** Last update Tue May 27 23:27:59 2014 bourrel
+** Last update Tue May 27 23:40:55 2014 bourrel
 */
 
 #include "rtv1.h"
 
-t_vec3		*inter_obj(t_eye *eye, float k)
+t_vec3		*inter_obj(t_vec3 *result, t_eye *eye, float k)
 {
-  t_vec3        *result;
-
-  result = xmalloc(sizeof(*result));
   result->x = eye->pos->x + (k * eye->dir->x);
   result->y = eye->pos->y + (k * eye->dir->y);
   result->z = eye->pos->z + (k * eye->dir->z);
@@ -49,6 +46,13 @@ int		put_ombre(int color, int nb)
   return (color);
 }
 
+int		free_inter(int ret, t_vec3 *inter, t_vec3 *vec_light)
+{
+  free(inter);
+  free(vec_light);
+  return (ret);
+}
+
 int		ombre(t_obj *obj, t_eye *eye, t_light l, t_spot *cur_spot)
 {
   t_obj         *c_obj;
@@ -56,7 +60,8 @@ int		ombre(t_obj *obj, t_eye *eye, t_light l, t_spot *cur_spot)
   t_vec3        *vec_light;
 
   c_obj = obj->next;
-  inter = inter_obj(eye, l.k2);
+  inter = xmalloc(sizeof(*inter));
+  inter = inter_obj(inter, eye, l.k2);
   vec_light = to_light_(inter, cur_spot);
   while (c_obj != NULL)
     {
@@ -66,11 +71,9 @@ int		ombre(t_obj *obj, t_eye *eye, t_light l, t_spot *cur_spot)
           l.k2 = tab[find_type(c_obj)].inter(inter, vec_light, c_obj->info->R);
 	  translate_pos_inv(inter, c_obj->pos);
           if (l.k2 > ZERO && l.k2 < 1 + ZERO)
-            return (1);
+	    return (free_inter(1, inter, vec_light));
         }
       c_obj = c_obj->next;
     }
-  free(inter);
-  free(vec_light);
-  return (0);
+  return (free_inter(0, inter, vec_light));
 }

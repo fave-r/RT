@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 ** 
 ** Started on  Tue Feb 11 19:30:33 2014 thibaud
-** Last update Tue May 27 23:22:31 2014 bourrel
+** Last update Tue May 27 23:33:03 2014 bourrel
 */
 
 #ifndef MY_RTV1_H_
@@ -132,7 +132,7 @@ int	init_obj_pos(float, float, float, t_vec3 *);
 int	init_obj_angle(float, float, float, t_vec3 *);
 void	init_spot(t_spot *);
 int	init_eye(t_eye *);
-t_vec3	*inter_obj(t_eye *, float);
+t_vec3	*inter_obj(t_vec3 *, t_eye *, float);
 t_vec3	*to_light_(t_vec3 *, t_spot *);
 int	put_ombre(int, int);
 int	ombre(t_obj *, t_eye *, t_light, t_spot *);

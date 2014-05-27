@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Wed Feb 26 14:21:52 2014 thibaud
-** Last update Tue May 27 16:02:38 2014 bourrel
+** Last update Tue May 27 23:42:11 2014 bourrel
 */
 
 #include "rtv1.h"
@@ -56,9 +56,14 @@ float		cut_obj(float k1, t_vec3 *pos, t_vec3 *dir)
   y = ZERO;
   eye_tmp.pos = pos;
   eye_tmp.dir = dir;
-  inter = inter_obj(&eye_tmp, k1);
+  inter = xmalloc(sizeof(*inter));
+  inter = inter_obj(inter, &eye_tmp, k1);
   if (inter->z < x || inter->z > y)
-    return (ZERO);
+    {
+      free(inter);
+      return (ZERO);
+    }
+  free(inter);
   return (k1);
 }
 

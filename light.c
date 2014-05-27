@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Thu Mar  6 20:34:38 2014 thibaud
-** Last update Tue May 27 15:57:04 2014 bourrel
+** Last update Tue May 27 23:36:14 2014 bourrel
 */
 
 #include "rtv1.h"
@@ -52,7 +52,8 @@ int		luminosite(t_eye *eye, t_light l, t_spot *spot, int color)
   float         result;
   t_vec3        *norme;
 
-  inter = inter_obj(eye, l.k2);
+  inter = xmalloc(sizeof(*inter));
+  inter = inter_obj(inter, eye, l.k2);
   norme = tab[find_type(l.clos_obj)].norme(inter);
   vec_light = to_light_(inter, spot);
   result = (norme->x * vec_light->x + norme->y

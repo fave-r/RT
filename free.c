@@ -5,14 +5,14 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Sun Mar 16 20:46:52 2014 thibaud
-** Last update Tue May 27 23:15:54 2014 bourrel
+** Last update Tue May 27 23:39:33 2014 bourrel
 */
 
 #include "rtv1.h"
 
-void	free_tab(char **tmp)
+void		free_tab(char **tmp)
 {
-  int	i;
+  int		i;
 
   i = 0;
   while (tmp[i])

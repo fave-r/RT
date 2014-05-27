@@ -5,10 +5,10 @@
 ## Login   <thibaud@epitech.net>
 ##
 ## Started on  Mon Oct 21 09:07:38 2013 thibaud
-## Last update Tue May 27 16:00:13 2014 bourrel
+## Last update Tue May 27 23:34:42 2014 bourrel
 ##
 
-CC=		gcc
+CC=		clang
 
 RM=		rm -f
 

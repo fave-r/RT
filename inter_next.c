@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Sat Mar 15 20:00:56 2014 thibaud
-** Last update Tue May 27 15:04:59 2014 bourrel
+** Last update Tue May 27 23:35:56 2014 bourrel
 */
 
 #include "rtv1.h"
@@ -81,7 +81,8 @@ float           inter_carre(t_vec3 *pos, t_vec3 *dir, int R)
       tmp_eye = xmalloc(sizeof(t_eye));
       tmp_eye->dir = dir;
       tmp_eye->pos = pos;
-      inter = inter_obj(tmp_eye, k);
+      inter = xmalloc(sizeof(*inter));
+      inter = inter_obj(inter, tmp_eye, k);
       if ((inter->x > R || inter->x < -R) || (inter->y > R || inter->y < -R))
         return (ZERO);
     }
