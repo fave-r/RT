@@ -5,7 +5,7 @@
 ** Login   <leo@epitech.net>
 ** 
 ** Started on  Mon May  5 16:49:21 2014 bourrel
-** Last update Wed May 28 12:57:45 2014 lhomme
+** Last update Wed May 28 13:17:42 2014 lhomme
 */
 
 #include <string.h>
@@ -61,7 +61,7 @@ int		parser(char *name, t_flag tab[], t_obj *obj, t_spot *spot)
       printf("Cannot read file %s\n", name);
       return (-1);
     }
-  while ((str = get_next_line(fd)))
+  while ((str = get_next_line(fd)) != NULL)
     {
       if (str[0])
 	{
