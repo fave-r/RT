@@ -5,10 +5,10 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Sat Mar 15 20:00:56 2014 thibaud
-** Last update Tue May 27 23:35:56 2014 bourrel
+** Last update Wed May 28 15:30:27 2014 lhomme
 */
 
-#include "rtv1.h"
+#include "rt.h"
 
 float           *calcul_delta(t_vec3 *pos, t_vec3 *dir, int R, float k[2])
 {

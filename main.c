@@ -5,11 +5,10 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Tue Feb 11 19:30:01 2014 thibaud
-** Last update Wed May 28 00:24:33 2014 bourrel
+** Last update Wed May 28 15:30:47 2014 lhomme
 */
 
-#include <float.h>
-#include "rtv1.h"
+#include "rt.h"
 
 t_flag		tab[] =
   {
@@ -112,7 +111,7 @@ int		main(int ac, char **av)
   t_spot	*spot;
 
   if ((mlx.mlx_ptr = mlx_init()) == NULL)
-    exit(-1);
+    return (-1);
   mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, WIN_SIZE, WIN_SIZE, "rtv1");
   mlx_key_hook(mlx.win_ptr, &gere_key, &mlx);
   mlx.img_ptr = mlx_new_image(mlx.mlx_ptr, 600, 600);

@@ -5,10 +5,10 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Sat Mar 15 19:36:13 2014 thibaud
-** Last update Wed May 14 11:43:43 2014 bourrel
+** Last update Wed May 28 15:30:01 2014 lhomme
 */
 
-#include "rtv1.h"
+#include "rt.h"
 
 t_mlx		get_data(t_mlx mlx)
 {

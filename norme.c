@@ -5,10 +5,10 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Wed Feb 26 16:15:20 2014 thibaud
-** Last update Wed May 28 00:29:57 2014 bourrel
+** Last update Wed May 28 15:31:46 2014 lhomme
 */
 
-#include "rtv1.h"
+#include "rt.h"
 
 t_vec3		*norme_plan(t_vec3 *inter)
 {

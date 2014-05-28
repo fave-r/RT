@@ -5,12 +5,10 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Fri Apr 11 15:10:11 2014 romaric
-** Last update Tue May 27 23:00:59 2014 bourrel
+** Last update Wed May 28 15:34:05 2014 lhomme
 */
 
-#include <string.h>
-#include <stdio.h>
-#include "../rtv1.h"
+#include "rt.h"
 
 int	strlen_word(const char *str, char *sep)
 {

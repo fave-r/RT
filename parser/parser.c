@@ -5,13 +5,10 @@
 ** Login   <leo@epitech.net>
 ** 
 ** Started on  Mon May  5 16:49:21 2014 bourrel
-** Last update Wed May 28 13:17:42 2014 lhomme
+** Last update Wed May 28 15:35:19 2014 lhomme
 */
 
-#include <string.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include "../rtv1.h"
+#include "rt.h"
 
 int	is_in_tab(char *str, t_flag tab[])
 {

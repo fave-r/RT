@@ -5,10 +5,10 @@
 ** Login   <leo@epitech.net>
 ** 
 ** Started on  Fri May  9 14:17:06 2014 bourrel
-** Last update Fri May  9 14:17:22 2014 bourrel
+** Last update Wed May 28 15:33:23 2014 lhomme
 */
 
-#include "../rtv1.h"
+#include "rt.h"
 
 int     my_strcompare(char *s1, char *s2)
 {

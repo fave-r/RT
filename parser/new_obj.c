@@ -5,11 +5,10 @@
 ** Login   <leo@epitech.net>
 ** 
 ** Started on  Wed May  7 01:24:27 2014 bourrel
-** Last update Wed May 28 14:42:17 2014 lhomme
+** Last update Wed May 28 15:35:05 2014 lhomme
 */
 
-#include <string.h>
-#include "../rtv1.h"
+#include "rt.h"
 
 void		new_spot(char **tmp, t_spot *spot)
 {

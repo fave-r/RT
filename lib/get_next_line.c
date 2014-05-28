@@ -5,18 +5,17 @@
 ** Login   <lhomme_a@epitech.net>
 ** 
 ** Started on  Wed Apr  2 16:44:34 2014 lhomme
-** Last update Mon May  5 17:56:58 2014 bourrel
+** Last update Wed May 28 15:32:46 2014 lhomme
 */
 
-#include <unistd.h>
-#include "../rtv1.h"
+#include "rt.h"
 
 void	*xmalloc(int size)
 {
   void	*temp;
 
   if ((temp = malloc(size)) == NULL)
-    exit (-1);
+    exit(-1);
   return (temp);
 }
 

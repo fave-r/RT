@@ -5,10 +5,10 @@
 ** Login   <leo@epitech.net>
 ** 
 ** Started on  Wed May 28 02:23:50 2014 bourrel
-** Last update Wed May 28 02:26:05 2014 bourrel
+** Last update Wed May 28 15:34:53 2014 lhomme
 */
 
-#include "rtv1.h"
+#include "rt.h"
 
 int	*color_to_tab(char *nbr, int tmp[])
 {
@@ -61,7 +61,7 @@ int	find_color(char *str)
   nbr = copy_color(nbr, str);
   color_to_tab(nbr, tmp);
   result = (tmp[0] * 65536) + (tmp[1] * 256) + tmp[2];
-  free (nbr);
+  free(nbr);
   return (result);
 }
 

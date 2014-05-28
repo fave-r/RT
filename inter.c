@@ -5,10 +5,10 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Wed Feb 26 14:21:52 2014 thibaud
-** Last update Tue May 27 23:42:11 2014 bourrel
+** Last update Wed May 28 15:30:20 2014 lhomme
 */
 
-#include "rtv1.h"
+#include "rt.h"
 
 float		inter_sphere(t_vec3 *pos, t_vec3 *dir, int R)
 {

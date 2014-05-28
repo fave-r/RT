@@ -5,10 +5,10 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Thu Mar  6 16:09:23 2014 thibaud
-** Last update Thu Apr 24 14:28:37 2014 romaric
+** Last update Wed May 28 15:31:27 2014 lhomme
 */
 
-#include "rtv1.h"
+#include "rt.h"
 
 int     translate_pos(t_vec3 *pos, t_vec3 *go_to)
 {

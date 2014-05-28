@@ -5,10 +5,10 @@
 ** Login   <thibaud@epitech.net>
 ** 
 ** Started on  Wed Feb 26 16:30:55 2014 thibaud
-** Last update Tue May 27 15:01:59 2014 bourrel
+** Last update Wed May 28 15:30:13 2014 lhomme
 */
 
-#include "rtv1.h"
+#include "rt.h"
 
 void	init_info(char *type, int R, int color, t_info *info)
 {

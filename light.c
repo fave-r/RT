@@ -5,10 +5,10 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Thu Mar  6 20:34:38 2014 thibaud
-** Last update Tue May 27 23:36:14 2014 bourrel
+** Last update Wed May 28 15:30:34 2014 lhomme
 */
 
-#include "rtv1.h"
+#include "rt.h"
 
 int		final_lum(t_spot *spot)
 {

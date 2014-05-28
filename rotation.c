@@ -5,10 +5,10 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Thu Feb 20 00:54:53 2014 thibaud
-** Last update Thu May  8 16:42:53 2014 thibaud
+** Last update Wed May 28 15:32:12 2014 lhomme
 */
 
-#include "rtv1.h"
+#include "rt.h"
 
 void		rotX(t_vec3 *vec, float angle)
 {

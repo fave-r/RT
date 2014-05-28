@@ -5,10 +5,10 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Wed Feb 26 14:16:33 2014 thibaud
-** Last update Tue May 27 22:54:49 2014 bourrel
+** Last update Wed May 28 15:30:39 2014 lhomme
 */
 
-#include "rtv1.h"
+#include "rt.h"
 
 t_spot		*creat_spot_list()
 {

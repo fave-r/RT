@@ -5,12 +5,10 @@
 ** Login   <leo@epitech.net>
 ** 
 ** Started on  Fri May  9 17:30:45 2014 bourrel
-** Last update Wed May 28 13:43:19 2014 lhomme
+** Last update Wed May 28 15:34:35 2014 lhomme
 */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "../rtv1.h"
+#include "rt.h"
 
 void	print_error(int line)
 {

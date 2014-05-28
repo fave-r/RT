@@ -5,10 +5,10 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Wed Feb 26 14:26:20 2014 thibaud
-** Last update Tue May 27 23:07:17 2014 bourrel
+** Last update Wed May 28 15:29:54 2014 lhomme
 */
 
-#include "rtv1.h"
+#include "rt.h"
 
 int     my_strcmp(char *s1, char *s2)
 {
