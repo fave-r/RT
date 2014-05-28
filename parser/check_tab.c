@@ -5,25 +5,46 @@
 ** Login   <leo@epitech.net>
 ** 
 ** Started on  Fri May  9 17:30:45 2014 bourrel
-** Last update Mon May 12 16:44:07 2014 bourrel
+** Last update Wed May 28 02:34:29 2014 bourrel
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include "../rtv1.h"
 
+void	print_error(int line)
+{
+  printf("Invalid color at line %d\n", line);
+  exit (-1);
+}
+
 void    check_color(char *str, int line)
 {
   int   i;
 
-  i = -1;
-  while (str[++i])
-    if ((str[i] < 'a'|| str[i] > 'z')
-	&& (str[i] < 'A'|| str[i] > 'Z'))
-      {
-        printf("Invalid color at line %d\n", line);
-        exit (-1);
-      }
+  i = 0;
+  if (my_strncompare("0x", str, 2))
+    {
+      if (strlen(str) != 8)
+	print_error(line);
+      while (str[i])
+	{
+	  if (str[i] != 'x' && (str[i] < '0'|| str[i] > '9')
+	      &&  (str[i] < 'a'|| str[i] > 'z') && (str[i] < 'A'|| str[i] > 'Z'))
+	    print_error(line);
+	  i++;
+	}
+    }
+  else
+    {
+      while (str[i])
+	{
+	  if ((str[i] < 'a'|| str[i] > 'z')
+	      && (str[i] < 'A'|| str[i] > 'Z'))
+	    print_error(line);
+	  i++;
+	}
+    }
 }
 
 void	check_nbr(char *str, int line, int arg)

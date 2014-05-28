@@ -5,7 +5,7 @@
 ## Login   <thibaud@epitech.net>
 ##
 ## Started on  Mon Oct 21 09:07:38 2013 thibaud
-## Last update Tue May 27 23:34:42 2014 bourrel
+## Last update Wed May 28 02:25:52 2014 bourrel
 ##
 
 CC=		clang
@@ -33,6 +33,7 @@ SRCS=		main.c \
 		parser/parser.c \
 		parser/new_obj.c \
 		parser/check_tab.c \
+		parser/color.c \
 		lib/get_next_line.c \
 		lib/my_str_to_wordtab.c \
 		lib/my_epur_str.c \

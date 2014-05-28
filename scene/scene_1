@@ -1,2 +1,3 @@
 SPHERE          : -200, 0, 0, 0, 0, 0, 100, ROUGE
-SPOT            : 200, 2000, 0, BLANC
+SPOT            : 0, 2000, -2000, BLANC
+SPOT            : 0, 2000, -2000, BLANC

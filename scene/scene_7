@@ -1,0 +1,13 @@
+CYLINDRE	: -400, -250, 00, 0, 0, 0, 100, BLEU
+CYLINDRE	: -150, -250, 00, 0, 0, 0, 100, BLEU
+CYLINDRE	: 150, -250, 00, 0, 0, 0, 100, BLEU
+CYLINDRE	: 400, -250, 00, 0, 0, 0, 100, BLEU
+
+PLAN		: 0, -250, 00, 0, 0, 0, 100, BLANC
+PLAN            : 0, -250, 00, 0, 0, 0, 100, BLANC
+SPHERE		: -250, 350, 0, 0, 0, 0, 100 ROUGE
+SPHERE          : 250, 350, 0, 0, 0, 0, 100 ROUGE
+SPHERE          : 0, 350, 0, 0, 0, 0, 100 ROSE
+
+SPOT            : 2000, 2000, -1000, BLANC
+SPOT            : -2000, 2000, -1000, BLANC

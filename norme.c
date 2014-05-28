@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Wed Feb 26 16:15:20 2014 thibaud
-** Last update Tue May 27 15:04:06 2014 bourrel
+** Last update Wed May 28 00:29:57 2014 bourrel
 */
 
 #include "rtv1.h"
@@ -17,7 +17,6 @@ t_vec3		*norme_plan(t_vec3 *inter)
   (void)inter;
   result = xmalloc(sizeof(t_vec3));
   result->x = 0;
-  result->y = 0;
   result->y = 0;
   result->z = 100;
   return (result);

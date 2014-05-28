@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 ** 
 ** Started on  Tue Feb 11 19:30:33 2014 thibaud
-** Last update Tue May 27 23:33:03 2014 bourrel
+** Last update Wed May 28 02:25:32 2014 bourrel
 */
 
 #ifndef MY_RTV1_H_
@@ -21,6 +21,7 @@
 #define	BUFF_SIZE 1024
 #define WIN_SIZE 600
 #define ZERO 0.000000001
+#define ROSE 0xE9967A
 #define BLEU 0x0000FF
 #define CYAN 0x00FFFF
 #define JAUNE 0xFFFF00
@@ -174,7 +175,8 @@ int	is_in_tab(char*, t_flag[]);
 void    check_spot(char **, int);
 void    check_obj(char **, int);
 void	free_tab(char**);
-int	parser_xml(char *name, t_flag tab[], t_obj *obj, t_spot *spot);
-char	*my_get_next_line(int fd);
+int	parser_xml(char *, t_flag[], t_obj *, t_spot *);
+char	*my_get_next_line(int);
+int	is_color(char*);
 
 #endif

@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Tue Feb 11 19:30:01 2014 thibaud
-** Last update Tue May 27 23:00:17 2014 bourrel
+** Last update Wed May 28 00:24:33 2014 bourrel
 */
 
 #include <float.h>
@@ -91,7 +91,7 @@ int		map_1(t_obj *obj, t_spot *spot)
   init_info("PLAN", 100, BLEU, &info);
   ad_obj(obj, &info, &obj_pos, &obj_angle);
   init_obj_angle(ZERO, ZERO, ZERO, &obj_angle);
-  init_obj_pos(ZERO, ZERO - 200, ZERO + 200, &obj_pos);
+  init_obj_pos(ZERO, ZERO - 250, ZERO + 50, &obj_pos);
   init_info("SPHERE", 100, ROUGE, &info);
   ad_obj(obj, &info, &obj_pos, &obj_angle);
   init_obj_angle(ZERO, ZERO, ZERO, &obj_angle);
