@@ -5,7 +5,7 @@
 ** Login   <leo@epitech.net>
 ** 
 ** Started on  Mon May  5 16:49:21 2014 bourrel
-** Last update Tue May 27 23:08:39 2014 bourrel
+** Last update Wed May 28 12:57:45 2014 lhomme
 */
 
 #include <string.h>
@@ -45,7 +45,7 @@ void		fill_list(char **tmp, t_flag tab[], t_obj *obj, t_spot *spot)
   else
     {
       printf("Unknown object line %d\n", i);
-      exit (-1);
+      exit(-1);
     }
 }
 
