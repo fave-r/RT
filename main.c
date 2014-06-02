@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Tue Feb 11 19:30:01 2014 thibaud
-** Last update Wed May 28 15:30:47 2014 lhomme
+** Last update Mon Jun  2 15:33:27 2014 lhomme
 */
 
 #include "rt.h"
@@ -112,7 +112,7 @@ int		main(int ac, char **av)
 
   if ((mlx.mlx_ptr = mlx_init()) == NULL)
     return (-1);
-  mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, WIN_SIZE, WIN_SIZE, "rtv1");
+  mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, WIN_SIZE, WIN_SIZE, "Raye Ta Soeur");
   mlx_key_hook(mlx.win_ptr, &gere_key, &mlx);
   mlx.img_ptr = mlx_new_image(mlx.mlx_ptr, 600, 600);
   mlx = get_data(mlx);
