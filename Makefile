@@ -5,7 +5,7 @@
 ## Login   <thibaud@epitech.net>
 ##
 ## Started on  Mon Oct 21 09:07:38 2013 thibaud
-## Last update Thu Jun  5 14:24:58 2014 romaric
+## Last update Tue Jun  3 18:02:56 2014 odet
 ##
 
 CC=		gcc
@@ -23,6 +23,7 @@ SRCS=		main.c \
 		inter_next.c \
 		basic_fct.c \
 		basic_fct_next.c \
+		bright.c \
 		norme.c \
 		init.c \
 		moove_obj.c \

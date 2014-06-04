@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Thu Mar  6 20:34:38 2014 thibaud
-** Last update Thu Jun  5 13:59:20 2014 bourrel
+** Last update Tue Jun  3 18:03:33 2014 odet
 */
 
 #include "rt.h"
@@ -51,6 +51,7 @@ int		luminosite(t_eye *eye, t_light l, t_spot *spot, int color)
   t_vec3        *vec_light;
   float         result;
   t_vec3        *norme;
+  int		save;
 
   inter = xmalloc(sizeof(*inter));
   inter = inter_obj(inter, eye, l.k2);
@@ -61,11 +62,13 @@ int		luminosite(t_eye *eye, t_light l, t_spot *spot, int color)
     ((sqrt(pow(norme->x, 2) + pow(norme->y, 2) + pow(norme->z, 2)) *
       sqrt(pow(vec_light->x, 2)
 	   + pow(vec_light->y, 2) + pow(vec_light->z, 2))));
+  //printf("result = %f\n", result);
+  save = spot->color;  
   spot->color = put_lum(color, result);
   free(inter);
   free(vec_light);
   free(norme);
-  return (spot->color);
+  return (bright(result, spot->color, save));
 }
 
 int		ad_color(int color1, int color2)

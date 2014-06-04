@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Wed Feb 26 16:15:20 2014 thibaud
-** Last update Thu Jun  5 13:51:25 2014 bourrel
+** Last update Tue Jun  3 18:04:59 2014 odet
 */
 
 #include "rt.h"
@@ -51,6 +51,6 @@ t_vec3		*norme_cone(t_vec3 *inter)
   result = xmalloc(sizeof(t_vec3));
   result->x = inter->x;
   result->y = inter->y;
-  result->z = inter->z * 0.2 + 50;
+  result->z = /*inter->z * 0.2 + 50*/0;
   return (result);
 }

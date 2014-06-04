@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Wed Feb 26 14:21:52 2014 thibaud
-** Last update Wed May 28 15:30:20 2014 lhomme
+** Last update Tue Jun  3 19:24:26 2014 odet
 */
 
 #include "rt.h"
@@ -90,7 +90,6 @@ float		inter_cone(t_vec3 *pos, t_vec3 *dir, int R)
       k2 = ((((-1) * c[1]) + sqrt(delta)) / (2 * c[0]));
       if (k2 < k1 && k2 >= ZERO)
 	k1 = k2;
-      return (cut_obj(k1, pos, dir));
     }
   return (k1);
 }
