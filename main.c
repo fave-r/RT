@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Tue Feb 11 19:30:01 2014 thibaud
-** Last update Mon Jun  2 15:33:27 2014 lhomme
+** Last update Tue Jun  3 15:14:01 2014 thibaud
 */
 
 #include "rt.h"
@@ -56,10 +56,10 @@ int		fill_image(t_mlx *mlx, t_obj *obj, t_spot *spot)
   init_eye(&eye);
   y = 0;
   eye.dir->x = 500;
-  while (y <= WIN_SIZE)
+  while (y < WIN_SIZE)
     {
       x = 0;
-      while (x <= WIN_SIZE)
+      while (x < WIN_SIZE)
 	{
 	  eye.dir->y = WIN_SIZE / 2 - x;
 	  eye.dir->z = WIN_SIZE / 2 - y;
@@ -114,7 +114,7 @@ int		main(int ac, char **av)
     return (-1);
   mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, WIN_SIZE, WIN_SIZE, "Raye Ta Soeur");
   mlx_key_hook(mlx.win_ptr, &gere_key, &mlx);
-  mlx.img_ptr = mlx_new_image(mlx.mlx_ptr, 600, 600);
+  mlx.img_ptr = mlx_new_image(mlx.mlx_ptr, WIN_SIZE, WIN_SIZE);
   mlx = get_data(mlx);
   obj = creat_obj_list();
   spot = creat_spot_list();
