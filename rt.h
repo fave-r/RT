@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 ** 
 ** Started on  Tue Feb 11 19:30:33 2014 thibaud
-** Last update Tue Jun  3 15:15:49 2014 thibaud
+** Last update Wed Jun  4 17:33:30 2014 bourrel
 */
 
 #ifndef RT_H_
@@ -181,5 +181,6 @@ void		free_tab(char**);
 int		parser_xml(char *, t_flag[], t_obj *, t_spot *);
 char		*my_get_next_line(int);
 int		is_color(char*);
+int		obj_color(t_light, t_eye*, t_obj*, t_spot*);
 
 #endif

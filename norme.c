@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Wed Feb 26 16:15:20 2014 thibaud
-** Last update Wed May 28 15:31:46 2014 lhomme
+** Last update Wed Jun  4 17:27:20 2014 bourrel
 */
 
 #include "rt.h"
@@ -40,7 +40,7 @@ t_vec3		*norme_cylindre(t_vec3 *inter)
   result = xmalloc(sizeof(t_vec3));
   result->x = inter->x;
   result->y = inter->y;
-  result->z = inter->z * 0.2 + 200;
+  result->z = 0;
   return (result);
 }
 
