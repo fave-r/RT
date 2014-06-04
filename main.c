@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Tue Feb 11 19:30:01 2014 thibaud
-** Last update Tue Jun  3 15:14:01 2014 thibaud
+** Last update Wed Jun  4 17:00:13 2014 bourrel
 */
 
 #include "rt.h"
@@ -25,25 +25,36 @@ int		inter_objs(t_eye *eye, t_obj *obj, t_spot *spot)
   t_light	l;
   t_obj		*cur_obj;
   float		k1;
+  int		color;
 
-  cur_obj = obj->next;
+  color = 0;
+  cur_obj = obj;
   l.clos_obj = NULL;
   l.k2 = FLT_MAX;
-  while (cur_obj != NULL)
+  while ((cur_obj = cur_obj->next))
     {
       place_obj(eye->pos, eye->dir, cur_obj->pos, cur_obj->angle);
       k1 = tab[find_type(cur_obj)].inter(eye->pos, eye->dir, cur_obj->info->R);
       if (k1 <= l.k2 && k1 > ZERO)
 	{
-	  l.k2 = k1;
-	  l.clos_obj = cur_obj;
-	}
+          l.k2 = k1;
+          l.clos_obj = cur_obj;
+        }
       place_obj_inv(eye->pos, eye->dir, cur_obj->pos, cur_obj->angle);
-      cur_obj = cur_obj->next;
     }
   if (l.clos_obj != NULL)
-    return (gere_light(eye, l, obj, spot));
-  return (0x000000);
+    {
+      if (l.clos_obj->angle->x != 0 || l.clos_obj->angle->y != 0
+          || l.clos_obj->angle->z != 0)
+	{
+          place_obj(eye->pos, eye->dir, l.clos_obj->pos, l.clos_obj->angle);
+          color = gere_light(eye, l, obj, spot);
+          place_obj_inv(eye->pos, eye->dir, l.clos_obj->pos, l.clos_obj->angle);
+        }
+      else
+        color = gere_light(eye, l, obj, spot);
+    }
+  return (color);
 }
 
 int		fill_image(t_mlx *mlx, t_obj *obj, t_spot *spot)
