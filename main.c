@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Tue Feb 11 19:30:01 2014 thibaud
-** Last update Wed Jun  4 17:36:42 2014 bourrel
+** Last update Thu Jun  5 01:57:33 2014 bourrel
 */
 
 #include "rt.h"
@@ -72,7 +72,7 @@ int		fill_image(t_mlx *mlx, t_obj *obj, t_spot *spot)
   return (0);
 }
 
-int		map_1(t_obj *obj, t_spot *spot)
+void		map_1(t_obj *obj, t_spot *spot)
 {
   t_vec3	obj_pos;
   t_vec3	obj_angle;
@@ -98,7 +98,6 @@ int		map_1(t_obj *obj, t_spot *spot)
   init_obj_pos(ZERO - 100, ZERO + 300, ZERO, &obj_pos);
   init_info("CYLINDRE", 100, ORANGE, &info);
   ad_obj(obj, &info, &obj_pos, &obj_angle);
-  return (0);
 }
 
 int		main(int ac, char **av)
