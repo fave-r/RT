@@ -1,4 +1,4 @@
-SPHERE          : 200, 0, 200, 0, 0, 0, 100, ROUGE
-CONE            : 000, 200, 0, 0, 0, 0, 3, VERT
-SPOT            : 2000, 2000, 0, BLANC
+SPHERE          : -50, 50, 0, 0, 0, 0, 100, JAUNE
+CONE            : 00, 250, 0, 90, 0, 0, 2, MAGENTA
+SPOT            : -2000, 2000, 0, BLANC
 SPOT            : 2000, -2000, -1000, BLANC
