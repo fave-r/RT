@@ -5,7 +5,7 @@
 ** Login   <leo@epitech.net>
 ** 
 ** Started on  Wed Jun  4 17:32:20 2014 bourrel
-** Last update Thu Jun  5 00:57:36 2014 bourrel
+** Last update Thu Jun  5 15:32:14 2014 romaric
 */
 
 #include "rt.h"
@@ -22,7 +22,8 @@ int	obj_color(t_light l, t_eye *eye, t_obj *obj, t_spot *spot)
         {
           place_obj(eye->pos, eye->dir, l.clos_obj->pos, l.clos_obj->angle);
           color = gere_light(eye, l, obj, spot);
-          place_obj_inv(eye->pos, eye->dir, l.clos_obj->pos, l.clos_obj->angle);
+          place_obj_inv(eye->pos, eye->dir
+			, l.clos_obj->pos, l.clos_obj->angle);
         }
       else
         color = gere_light(eye, l, obj, spot);
