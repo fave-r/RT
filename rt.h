@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 ** 
 ** Started on  Tue Feb 11 19:30:33 2014 thibaud
-** Last update Tue Jun  3 18:04:17 2014 odet
+** Last update Fri Jun  6 16:26:04 2014 romaric
 */
 
 #ifndef RT_H_
@@ -124,7 +124,7 @@ float		calc_delta(t_vec3 *, t_vec3 *, int, float);
 int		my_strcmp(char *, char *);
 float		rad_conv(float);
 int		gere_expose(t_mlx *);
-int		gere_key(int);
+int		gere_key(int keycode, t_mlx *mlx);
 int		mlx_put_pixel(char *, int, int, int);
 t_mlx		get_data(t_mlx);
 t_vec3		*norme_sphere(t_vec3 *);

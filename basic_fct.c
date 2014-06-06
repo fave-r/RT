@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Wed Feb 26 14:26:20 2014 thibaud
-** Last update Wed May 28 15:29:54 2014 lhomme
+** Last update Fri Jun  6 16:25:10 2014 romaric
 */
 
 #include "rt.h"
@@ -48,22 +48,25 @@ int     gere_expose(t_mlx *mlx)
   return (0);
 }
 
-int     gere_key(int keycode)
+int     gere_key(int keycode, t_mlx *mlx)
 {
   if (keycode == 65307)
-    exit(0);
+    {
+      mlx_destroy_window(mlx->mlx_ptr, mlx->win_ptr);
+      exit(EXIT_SUCCESS);
+    }
   return (0);
 }
 
-int     mlx_put_pixel(char *data, int x, int y, int color)
-{
-  char  *ptr;
-  char  *color_ptr;
+  int     mlx_put_pixel(char *data, int x, int y, int color)
+  {
+    char  *ptr;
+    char  *color_ptr;
 
-  ptr = data + y * 2400 + x * 4;
-  color_ptr = (char *)&color;
-  ptr[0] = color_ptr[0];
-  ptr[1] = color_ptr[1];
-  ptr[2] = color_ptr[2];
-  return (0);
-}
+    ptr = data + y * 2400 + x * 4;
+    color_ptr = (char *)&color;
+    ptr[0] = color_ptr[0];
+    ptr[1] = color_ptr[1];
+    ptr[2] = color_ptr[2];
+    return (0);
+  }
