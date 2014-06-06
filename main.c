@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Tue Feb 11 19:30:01 2014 thibaud
-** Last update Thu Jun  5 01:57:33 2014 bourrel
+** Last update Fri Jun  6 13:46:10 2014 romaric
 */
 
 #include "rt.h"
@@ -117,7 +117,7 @@ int		main(int ac, char **av)
   if (ac == 2)
     {
       if ((parser(av[1], tab, obj, spot)) == -1)
-        return (-1);
+	return (-1);
     }
   else
     map_1(obj, spot);
