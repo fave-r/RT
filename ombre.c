@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Thu Mar  6 16:25:10 2014 thibaud
-** Last update Wed May 28 15:31:52 2014 lhomme
+** Last update Fri Jun  6 16:03:18 2014 bourrel
 */
 
 #include "rt.h"
@@ -68,7 +68,7 @@ int		ombre(t_obj *obj, t_eye *eye, t_light l, t_spot *cur_spot)
       if (c_obj != l.clos_obj)
         {
 	  translate_pos(inter, c_obj->pos);
-          l.k2 = tab[find_type(c_obj)].inter(inter, vec_light, c_obj->info->R);
+	  l.k2 = tab[find_type(c_obj)].inter(inter, vec_light, c_obj->info->R);
 	  translate_pos_inv(inter, c_obj->pos);
           if (l.k2 > ZERO && l.k2 < 1 + ZERO)
 	    return (free_inter(1, inter, vec_light));

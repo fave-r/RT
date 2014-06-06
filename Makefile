@@ -5,7 +5,7 @@
 ## Login   <thibaud@epitech.net>
 ##
 ## Started on  Mon Oct 21 09:07:38 2013 thibaud
-## Last update Tue Jun  3 18:02:56 2014 odet
+## Last update Fri Jun  6 16:04:56 2014 bourrel
 ##
 
 CC=		gcc
@@ -31,7 +31,6 @@ SRCS=		main.c \
 		ombre.c \
 		free.c \
 		light.c \
-		obj_color.c \
 		parser/parser.c \
 		parser/new_obj.c \
 		parser/check_tab.c \

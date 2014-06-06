@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Tue Feb 11 19:30:01 2014 thibaud
-** Last update Fri Jun  6 13:46:10 2014 romaric
+** Last update Fri Jun  6 16:03:08 2014 bourrel
 */
 
 #include "rt.h"
@@ -25,7 +25,9 @@ int		inter_objs(t_eye *eye, t_obj *obj, t_spot *spot)
   t_light	l;
   t_obj		*cur_obj;
   float		k1;
+  int		color;
 
+  color = 0;
   cur_obj = obj;
   l.clos_obj = NULL;
   l.k2 = FLT_MAX;
@@ -37,10 +39,11 @@ int		inter_objs(t_eye *eye, t_obj *obj, t_spot *spot)
 	{
           l.k2 = k1;
           l.clos_obj = cur_obj;
+	  color = gere_light(eye, l, obj, spot);
         }
       place_obj_inv(eye->pos, eye->dir, cur_obj->pos, cur_obj->angle);
     }
-  return (obj_color(l, eye, obj, spot));
+  return (color);
 }
 
 int		fill_image(t_mlx *mlx, t_obj *obj, t_spot *spot)

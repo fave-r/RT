@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Thu Mar  6 20:34:38 2014 thibaud
-** Last update Fri Jun  6 13:43:33 2014 romaric
+** Last update Fri Jun  6 15:23:40 2014 bourrel
 */
 
 #include "rt.h"
@@ -62,7 +62,6 @@ int		luminosite(t_eye *eye, t_light l, t_spot *spot, int color)
     ((sqrt(pow(norme->x, 2) + pow(norme->y, 2) + pow(norme->z, 2)) *
       sqrt(pow(vec_light->x, 2)
 	   + pow(vec_light->y, 2) + pow(vec_light->z, 2))));
-  //printf("result = %f\n", result);
   save = spot->color;
   spot->color = put_lum(color, result);
   free(inter);
