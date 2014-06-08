@@ -5,14 +5,14 @@
 ## Login   <fave_r@epitech.net>
 ##
 ## Started on  Sun Jun  8 21:29:15 2014 romaric
-## Last update Sun Jun  8 21:29:25 2014 romaric
+## Last update Sun Jun  8 22:09:07 2014 romaric
 ##
 
 CC=		gcc
 
 RM=		rm -f
 
-CFLAGS=		-Wextra -Wall -Werror -I.
+CFLAGS=		-Wextra -Wall -Werror -I. -I./minilibx/
 
 NAME=		rt
 
@@ -42,7 +42,7 @@ SRCS=		main.c \
 		lib/my_strcompare.c \
 		lib/my_strncompare.c
 
-MINLIB=		-lmlx -L/usr/lib64 -lXext -lX11 -L/usr/lib64/X11 -lm
+MINLIB=		-L./minilibx/ -lmlx -L/usr/lib64/X11 -lXext -lX11 -lm
 
 OBJS=		$(SRCS:.c=.o)
 
