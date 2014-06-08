@@ -1,18 +1,18 @@
 ##
-## Makefile for Makefile in /home/thibaud/rendu/Piscine-C-lib/my
+## Makefile for rt in /tmp/RT
 ##
-## Made by thibaud
-## Login   <thibaud@epitech.net>
+## Made by romaric
+## Login   <fave_r@epitech.net>
 ##
-## Started on  Mon Oct 21 09:07:38 2013 thibaud
-## Last update Fri Jun  6 16:04:56 2014 bourrel
+## Started on  Sun Jun  8 21:29:15 2014 romaric
+## Last update Sun Jun  8 21:29:25 2014 romaric
 ##
 
 CC=		gcc
 
 RM=		rm -f
 
-CFLAGS=		-Wextra -Wall -Werror -g3 -ggdb3 -I.
+CFLAGS=		-Wextra -Wall -Werror -I.
 
 NAME=		rt
 
