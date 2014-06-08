@@ -5,15 +5,15 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Sat Mar 15 20:00:56 2014 thibaud
-** Last update Wed May 28 15:30:27 2014 lhomme
+** Last update Sun Jun  8 20:47:05 2014 romaric
 */
 
 #include "rt.h"
 
-float           *calcul_delta(t_vec3 *pos, t_vec3 *dir, int R, float k[2])
+float		*calcul_delta(t_vec3 *pos, t_vec3 *dir, int R, float k[2])
 {
-  float         c[3];
-  float         delta;
+  float		c[3];
+  float		delta;
 
   c[0] = (dir->x * dir->x) + (dir->y * dir->y);
   c[1] = 2 * ((pos->x * dir->x) + (pos->y * dir->y));
@@ -27,10 +27,10 @@ float           *calcul_delta(t_vec3 *pos, t_vec3 *dir, int R, float k[2])
   return (k);
 }
 
-float           inter_cylindre(t_vec3 *pos, t_vec3 *dir, int R)
+float		inter_cylindre(t_vec3 *pos, t_vec3 *dir, int R)
 {
-  float         k[2];
-  t_vec3        *inter;
+  float		k[2];
+  t_vec3	*inter;
 
   (void)inter;
   k[0] = 0;
@@ -46,10 +46,10 @@ float           inter_cylindre(t_vec3 *pos, t_vec3 *dir, int R)
   return (k[0]);
 }
 
-float           *inter_disque(t_vec3 *pos, t_vec3 *dir, int R, float k[2])
+float		*inter_disque(t_vec3 *pos, t_vec3 *dir, int R, float k[2])
 {
-  float         c[3];
-  float         delta;
+  float		c[3];
+  float		delta;
 
   if (dir->z != 0)
     {
@@ -66,11 +66,11 @@ float           *inter_disque(t_vec3 *pos, t_vec3 *dir, int R, float k[2])
   return (k);
 }
 
-float           inter_carre(t_vec3 *pos, t_vec3 *dir, int R)
+float		inter_carre(t_vec3 *pos, t_vec3 *dir, int R)
 {
-  float         k;
-  t_vec3        *inter;
-  t_eye         *tmp_eye;
+  float		k;
+  t_vec3	*inter;
+  t_eye		*tmp_eye;
 
   (void)R;
   k = ZERO;

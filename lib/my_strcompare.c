@@ -1,18 +1,18 @@
 /*
 ** my_strcompare.c for RT in /home/leo/rendu/RT/lib
-** 
+**
 ** Made by bourrel
 ** Login   <leo@epitech.net>
-** 
+**
 ** Started on  Fri May  9 14:17:06 2014 bourrel
-** Last update Wed May 28 15:33:23 2014 lhomme
+** Last update Sun Jun  8 21:16:05 2014 romaric
 */
 
 #include "rt.h"
 
-int     my_strcompare(char *s1, char *s2)
+int	my_strcompare(char *s1, char *s2)
 {
-  int   i;
+  int	i;
 
   i = 0;
   if (!s1 || !s2)

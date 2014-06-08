@@ -1,11 +1,11 @@
 /*
-** my_str_to_wordtab.c for corewar in /home/blackbird/work/Corewar/my
+** my_str_to_wordtab.c for rt in /home/blackbird/work/RT/lib
 **
 ** Made by romaric
 ** Login   <fave_r@epitech.net>
 **
-** Started on  Fri Apr 11 15:10:11 2014 romaric
-** Last update Wed May 28 15:34:05 2014 lhomme
+** Started on  Sun Jun  8 21:16:59 2014 romaric
+** Last update Sun Jun  8 21:17:17 2014 romaric
 */
 
 #include "rt.h"

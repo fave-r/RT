@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Thu Mar  6 16:25:10 2014 thibaud
-** Last update Sun Jun  8 18:36:06 2014 bourrel
+** Last update Sun Jun  8 20:51:32 2014 romaric
 */
 
 #include "rt.h"
@@ -20,7 +20,7 @@ t_vec3		*inter_obj(t_vec3 *result, t_eye *eye, float k)
 
 t_vec3		*to_light_(t_vec3 *inter, t_spot *spot)
 {
-  t_vec3        *result;
+  t_vec3	*result;
 
   result = xmalloc(sizeof(*result));
   result->x = spot->x - inter->x;
@@ -55,9 +55,9 @@ int		free_inter(int ret, t_vec3 *inter, t_vec3 *vec_light)
 
 int		ombre(t_obj *obj, t_eye *eye, t_light l, t_spot *cur_spot)
 {
-  t_obj         *c_obj;
-  t_vec3        *inter;
-  t_vec3        *vec_light;
+  t_obj		*c_obj;
+  t_vec3	*inter;
+  t_vec3	*vec_light;
 
   c_obj = obj->next;
   inter = xmalloc(sizeof(*inter));

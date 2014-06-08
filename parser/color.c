@@ -1,11 +1,11 @@
 /*
 ** color.c for RT in /home/leo/rendu/RT
-** 
+**
 ** Made by bourrel
 ** Login   <leo@epitech.net>
-** 
+**
 ** Started on  Wed May 28 02:23:50 2014 bourrel
-** Last update Wed May 28 15:34:53 2014 lhomme
+** Last update Sun Jun  8 21:20:00 2014 romaric
 */
 
 #include "rt.h"
@@ -52,9 +52,9 @@ char	*copy_color(char *nbr, char *str)
 
 int	find_color(char *str)
 {
-  int   result;
-  char  *nbr;
-  int   tmp[3];
+  int	result;
+  char	*nbr;
+  int	tmp[3];
 
   nbr = xmalloc(sizeof(char) * strlen(str));
   result = 0;

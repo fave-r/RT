@@ -1,11 +1,11 @@
 /*
-** my_strchr.c for my_strchr in /home/thibaut.lopez/Corewar/my
-** 
-** Made by Thibaut Lopez
-** Login   <thibaut.lopez@epitech.net>
-** 
-** Started on  Sun Feb 23 20:59:59 2014 Thibaut Lopez
-** Last update Sun Feb 23 21:01:21 2014 Thibaut Lopez
+** my_strchr.c for rt in /home/blackbird/work/RT/lib
+**
+** Made by romaric
+** Login   <fave_r@epitech.net>
+**
+** Started on  Sun Jun  8 21:01:07 2014 romaric
+** Last update Sun Jun  8 21:01:13 2014 romaric
 */
 
 int	my_strchr(char src, char *dest)

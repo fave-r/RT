@@ -1,11 +1,11 @@
 /*
 ** parser.c for RT in /home/leo/rendu/RT/parser
-** 
+**
 ** Made by bourrel
 ** Login   <leo@epitech.net>
-** 
+**
 ** Started on  Mon May  5 16:49:21 2014 bourrel
-** Last update Thu Jun  5 01:53:33 2014 bourrel
+** Last update Sun Jun  8 21:22:09 2014 romaric
 */
 
 #include "rt.h"
@@ -41,8 +41,8 @@ void		fill_list(char **tmp, t_flag tab[], t_obj *obj, t_spot *spot)
     }
   else
     {
-      printf("Unknown object line %d\n", i);
-      exit(-1);
+      fprintf(stderr, "Unknown object line %d\n", i);
+      exit(EXIT_FAILURE);
     }
 }
 
@@ -55,7 +55,7 @@ int		parser(char *name, t_flag tab[], t_obj *obj, t_spot *spot)
   tmp = NULL;
   if ((fd = open(name, O_RDONLY)) == -1)
     {
-      printf("Cannot read file %s\n", name);
+      fprintf(stderr, "Cannot read file %s\n", name);
       return (-1);
     }
   while ((str = get_next_line(fd)) != NULL)

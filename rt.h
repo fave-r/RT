@@ -1,11 +1,11 @@
 /*
 ** rtv1.h for rtv1 in /home/thibaud/rendu/MUL_2013_rtv1
-** 
+**
 ** Made by thibaud
 ** Login   <thibaud@epitech.net>
-** 
+**
 ** Started on  Tue Feb 11 19:30:33 2014 thibaud
-** Last update Fri Jun  6 16:26:04 2014 romaric
+** Last update Sun Jun  8 20:55:14 2014 romaric
 */
 
 #ifndef RT_H_
@@ -143,9 +143,9 @@ int		ombre(t_obj *, t_eye *, t_light, t_spot *);
 int		place_obj(t_vec3 *, t_vec3 *, t_vec3 *, t_vec3 *);
 int		place_obj_inv(t_vec3 *, t_vec3 *, t_vec3 *, t_vec3 *);
 float		cut_obj(float, t_vec3 *, t_vec3 *);
-void		rotX(t_vec3 *, float);
-void		rotY(t_vec3 *, float);
-void		rotZ(t_vec3 *, float);
+void		rotx(t_vec3 *, float);
+void		roty(t_vec3 *, float);
+void		rotz(t_vec3 *, float);
 void		rotate_all(t_vec3 *, t_vec3 *);
 void		rotate_all_inv(t_vec3 *, t_vec3 *);
 int		translate_pos(t_vec3 *, t_vec3 *);

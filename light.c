@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Thu Mar  6 20:34:38 2014 thibaud
-** Last update Fri Jun  6 15:23:40 2014 bourrel
+** Last update Sun Jun  8 20:48:10 2014 romaric
 */
 
 #include "rt.h"
@@ -13,7 +13,7 @@
 int		final_lum(t_spot *spot)
 {
   int		color;
-  t_spot        *cur_spot;
+  t_spot	*cur_spot;
 
   color = 0;
   cur_spot = spot->next;
@@ -28,7 +28,7 @@ int		final_lum(t_spot *spot)
 int		gere_light(t_eye *eye, t_light l, t_obj *obj, t_spot *spot)
 {
   int		color;
-  t_spot        *cur_spot;
+  t_spot	*cur_spot;
   int		ombre_nb;
 
   ombre_nb = 0;
@@ -47,10 +47,10 @@ int		gere_light(t_eye *eye, t_light l, t_obj *obj, t_spot *spot)
 
 int		luminosite(t_eye *eye, t_light l, t_spot *spot, int color)
 {
-  t_vec3        *inter;
-  t_vec3        *vec_light;
-  float         result;
-  t_vec3        *norme;
+  t_vec3	*inter;
+  t_vec3	*vec_light;
+  float		result;
+  t_vec3	*norme;
   int		save;
 
   inter = xmalloc(sizeof(*inter));

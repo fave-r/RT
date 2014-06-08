@@ -1,11 +1,11 @@
 /*
 ** init.c for rtv1 in /home/thibaud/rendu/MUL_2013_rtv1
-** 
+**
 ** Made by thibaud
 ** Login   <thibaud@epitech.net>
-** 
+**
 ** Started on  Wed Feb 26 16:30:55 2014 thibaud
-** Last update Wed May 28 15:30:13 2014 lhomme
+** Last update Sun Jun  8 20:42:19 2014 romaric
 */
 
 #include "rt.h"
@@ -17,7 +17,7 @@ void	init_info(char *type, int R, int color, t_info *info)
   info->color = color;
 }
 
-void    init_spot(t_spot *spot)
+void	init_spot(t_spot *spot)
 {
   spot->x = -400;
   spot->y = 0;
@@ -25,7 +25,7 @@ void    init_spot(t_spot *spot)
   spot->color = 0x000000;
 }
 
-int     init_obj_pos(float x, float y, float z, t_vec3 *pos)
+int	init_obj_pos(float x, float y, float z, t_vec3 *pos)
 {
   pos->x = x;
   pos->y = y;
@@ -33,7 +33,7 @@ int     init_obj_pos(float x, float y, float z, t_vec3 *pos)
   return (0);
 }
 
-int     init_eye(t_eye *eye)
+int	init_eye(t_eye *eye)
 {
   eye->pos = xmalloc(sizeof(t_vec3));
   eye->dir = xmalloc(sizeof(t_vec3));

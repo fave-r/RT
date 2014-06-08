@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Wed Feb 26 14:16:33 2014 thibaud
-** Last update Wed May 28 15:30:39 2014 lhomme
+** Last update Sun Jun  8 20:48:35 2014 romaric
 */
 
 #include "rt.h"
@@ -25,7 +25,7 @@ t_spot		*creat_spot_list()
 
 int		ad_spot(t_spot *list, int color, t_vec3 *pos)
 {
-  t_spot        *new_elem;
+  t_spot	*new_elem;
 
   while (list->next != NULL)
     list = list->next;

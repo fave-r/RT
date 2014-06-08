@@ -5,14 +5,14 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Wed Feb 26 14:26:20 2014 thibaud
-** Last update Fri Jun  6 16:25:10 2014 romaric
+** Last update Sun Jun  8 20:39:21 2014 romaric
 */
 
 #include "rt.h"
 
-int     my_strcmp(char *s1, char *s2)
+int		my_strcmp(char *s1, char *s2)
 {
-  int   i;
+  int		i;
 
   i = 0;
   if (!s1)
@@ -34,21 +34,21 @@ int     my_strcmp(char *s1, char *s2)
   return (0);
 }
 
-float   rad_conv(float deg)
+float		rad_conv(float deg)
 {
-  float rad;
+  float		rad;
 
   rad = deg * M_PI * 2 / 360;
   return (rad);
 }
 
-int     gere_expose(t_mlx *mlx)
+int		gere_expose(t_mlx *mlx)
 {
   mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr, mlx->img_ptr, 0, 0);
   return (0);
 }
 
-int     gere_key(int keycode, t_mlx *mlx)
+int		gere_key(int keycode, t_mlx *mlx)
 {
   if (keycode == 65307)
     {
@@ -58,10 +58,10 @@ int     gere_key(int keycode, t_mlx *mlx)
   return (0);
 }
 
-  int     mlx_put_pixel(char *data, int x, int y, int color)
+  int		mlx_put_pixel(char *data, int x, int y, int color)
   {
-    char  *ptr;
-    char  *color_ptr;
+    char	*ptr;
+    char	*color_ptr;
 
     ptr = data + y * 2400 + x * 4;
     color_ptr = (char *)&color;

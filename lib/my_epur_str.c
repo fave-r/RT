@@ -1,17 +1,17 @@
 /*
 ** my_epur_str.c for mysh in /home/lhomme_a/rendu/PSU_2013_minishell2
-** 
+**
 ** Made by lhomme
 ** Login   <lhomme_a@epitech.net>
-** 
+**
 ** Started on  Mon Feb 10 17:00:57 2014 lhomme
-** Last update Fri May  9 10:41:14 2014 bourrel
+** Last update Sun Jun  8 20:58:13 2014 romaric
 */
 
-char	*my_epur_str(char *str)
+char		*my_epur_str(char *str)
 {
-  int           i;
-  int           j;
+  int		i;
+  int		j;
 
   i = 0;
   j = 0;

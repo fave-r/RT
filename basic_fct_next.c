@@ -5,16 +5,16 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Sat Mar 15 19:36:13 2014 thibaud
-** Last update Wed May 28 15:30:01 2014 lhomme
+** Last update Sun Jun  8 20:40:19 2014 romaric
 */
 
 #include "rt.h"
 
 t_mlx		get_data(t_mlx mlx)
 {
-  int           bpp;
-  int           sizeline;
-  int           endian;
+  int		bpp;
+  int		sizeline;
+  int		endian;
 
   mlx.data = mlx_get_data_addr(mlx.img_ptr, &bpp, &sizeline, &endian);
   return (mlx);

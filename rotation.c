@@ -5,12 +5,12 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Thu Feb 20 00:54:53 2014 thibaud
-** Last update Wed May 28 15:32:12 2014 lhomme
+** Last update Sun Jun  8 20:55:41 2014 romaric
 */
 
 #include "rt.h"
 
-void		rotX(t_vec3 *vec, float angle)
+void		rotx(t_vec3 *vec, float angle)
 {
   float		tmp[3];
 
@@ -21,7 +21,7 @@ void		rotX(t_vec3 *vec, float angle)
   vec->z = sinf(angle) * tmp[1] + cosf(angle) * tmp[2];
 }
 
-void		rotY(t_vec3 *vec, float angle)
+void		roty(t_vec3 *vec, float angle)
 {
   float		tmp[3];
 
@@ -32,7 +32,7 @@ void		rotY(t_vec3 *vec, float angle)
   vec->z = -1 * sinf(angle) * tmp[0] + cosf(angle) * tmp[2];
 }
 
-void		rotZ(t_vec3 *vec, float angle)
+void		rotz(t_vec3 *vec, float angle)
 {
   float		tmp[3];
 
@@ -43,16 +43,16 @@ void		rotZ(t_vec3 *vec, float angle)
   vec->y = sinf(angle) * tmp[0] + cosf(angle) * tmp[1];
 }
 
-void            rotate_all(t_vec3 *dir, t_vec3 *angle)
+void		rotate_all(t_vec3 *dir, t_vec3 *angle)
 {
-  rotX(dir, rad_conv(angle->x));
-  rotY(dir, rad_conv(angle->y));
-  rotZ(dir, rad_conv(angle->z));
+  rotx(dir, rad_conv(angle->x));
+  roty(dir, rad_conv(angle->y));
+  rotz(dir, rad_conv(angle->z));
 }
 
-void            rotate_all_inv(t_vec3 *dir, t_vec3 *angle)
+void		rotate_all_inv(t_vec3 *dir, t_vec3 *angle)
 {
-  rotX(dir, -rad_conv(angle->x));
-  rotY(dir, -rad_conv(angle->y));
-  rotZ(dir, -rad_conv(angle->z));
+  rotx(dir, -rad_conv(angle->x));
+  roty(dir, -rad_conv(angle->y));
+  rotz(dir, -rad_conv(angle->z));
 }

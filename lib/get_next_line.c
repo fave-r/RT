@@ -1,25 +1,25 @@
 /*
 ** get_next_line.c for get_next_line in /home/lhomme_a/rendu/CPE_2014_corewar/asm
-** 
+**
 ** Made by lhomme
 ** Login   <lhomme_a@epitech.net>
-** 
+**
 ** Started on  Wed Apr  2 16:44:34 2014 lhomme
-** Last update Wed May 28 15:32:46 2014 lhomme
+** Last update Sun Jun  8 20:57:48 2014 romaric
 */
 
 #include "rt.h"
 
-void	*xmalloc(int size)
+void		*xmalloc(int size)
 {
-  void	*temp;
+  void		*temp;
 
   if ((temp = malloc(size)) == NULL)
     exit(-1);
   return (temp);
 }
 
-int    stock_buffer(t_var *var, char *tmp, int *save)
+int		stock_buffer(t_var *var, char *tmp, int *save)
 {
   while (var->i < BUFF_SIZE)
     {
@@ -46,7 +46,7 @@ int    stock_buffer(t_var *var, char *tmp, int *save)
   return (1);
 }
 
-char        *get_next_line(const int fd)
+char		*get_next_line(const int fd)
 {
   static int	save = 0;
   static char	buff[BUFF_SIZE + 1];
