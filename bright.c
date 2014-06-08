@@ -5,7 +5,7 @@
 ** Login   <odet@epitech.net>
 ** 
 ** Started on  Tue Jun  3 17:50:20 2014 odet
-** Last update Tue Jun  3 18:08:42 2014 odet
+** Last update Sun Jun  8 18:34:55 2014 bourrel
 */
 
 #include "rt.h"
@@ -14,6 +14,6 @@ int	bright(float coeff, int color, int old_color)
 {
   int	new_color;
 
-  new_color = (((color + coeff) * old_color)/* * cos(angle)*/);
+  new_color = (((color + coeff) * old_color));
   return (new_color);
 }

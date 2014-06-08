@@ -5,7 +5,7 @@
 ** Login   <leo@epitech.net>
 ** 
 ** Started on  Wed May  7 01:24:27 2014 bourrel
-** Last update Thu Jun  5 14:04:58 2014 bourrel
+** Last update Sun Jun  8 18:36:32 2014 bourrel
 */
 
 #include "rt.h"
@@ -18,7 +18,6 @@ void		new_spot(char **tmp, t_spot *spot)
 
   x = ZERO;
   init_obj_pos(x + atof(tmp[3]), x + atof(tmp[1]), x + atof(tmp[2]), &pos);
-  //init_obj_pos(x + atof(tmp[1]), x + atof(tmp[2]), x + atof(tmp[3]), &pos);
   if ((color = is_color(tmp[4])) == -1)
     {
       printf("Unknown color, please check your file !\n");
@@ -43,7 +42,6 @@ void		new_obj(char **tmp, t_obj *list)
     }
   init_obj_angle(x + atof(tmp[4]), x + atof(tmp[5]), x + atof(tmp[6]), &rot);
   init_obj_pos(x + atof(tmp[3]), x + atof(tmp[1]), x + atof(tmp[2]), &pos);
-  //init_obj_pos(x + atof(tmp[1]), x + atof(tmp[2]), x + atof(tmp[3]), &pos);
   init_info(tmp[0], x + atof(tmp[7]), color, &info);
   ad_obj(list, &info, &pos, &rot);
 }

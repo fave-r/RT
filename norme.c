@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Wed Feb 26 16:15:20 2014 thibaud
-** Last update Fri Jun  6 15:52:35 2014 lhomme
+** Last update Sun Jun  8 18:35:23 2014 bourrel
 */
 
 #include "rt.h"
@@ -53,7 +53,5 @@ t_vec3		*norme_cone(t_vec3 *inter)
   result->x = inter->x;
   result->y = inter->y;
   result->z = 0;
-  //  printf("%f\n%f\n%f\n", result->x, result->y, result->z);
-  //  exit(0);
   return (result);
 }

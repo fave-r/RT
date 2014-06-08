@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Sat Mar 15 19:38:01 2014 thibaud
-** Last update Thu Jun  5 14:21:14 2014 romaric
+** Last update Sun Jun  8 18:35:05 2014 bourrel
 */
 
 #include "rt.h"
@@ -13,13 +13,11 @@
 int     moove_eye_back(t_eye *eye)
 {
   rotate_all_inv(eye->dir, eye->rotation);
-  //rotate_all_inv(eye->pos, eye->rotation);
   return (0);
 }
 
 int     moove_eye(t_eye *eye)
 {
-  //rotate_all(eye->pos, eye->rotation);
   rotate_all(eye->dir, eye->rotation);
   return (0);
 }
