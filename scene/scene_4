@@ -1,4 +1,4 @@
-PLAN		: 0, -250, 00, 0, 0, 0, 100, JAUNE
-CONE            : 000, 200, 0, 20, 0, 0, 5, CYAN
-SPOT            : -1500, 500, 0, BLANC
-SPOT            : 000, 2000, -1000, BLANC
+PLAN		: 0, -200, 00, 0, 0, 0, 100, JAUNE
+CONE            : 0, 0, 0, 20, 0, 0, 10, 0x7F7FFF
+SPOT            : -1000, 1000, 0, BLANC
+SPOT            : 0, 50, -1000, BLANC

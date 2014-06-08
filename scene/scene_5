@@ -1,6 +1,6 @@
 PLAN		: 00, -250, 00, 0, 0, 0, 100, 0x90EE90
 SPHERE		: -200, 200, 0, 0, 0, 0, 200, ROSE
-SPOT            : 4000, 4000, 0, BLANC
-SPOT            : 4000, -4000, -2000, BLANC
-SPOT            : 4000, 1000, 0, BLANC
-SPOT            : 4000, -4000, -2000, BLANC
+SPOT            : -700, 150, -100, BLANC
+SPOT            : 1000, 1000, 0, BLANC
+SPOT            : 800, 1000, 400, BLANC
+SPOT            : 4000, 1000, -500, BLANC
