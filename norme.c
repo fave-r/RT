@@ -5,7 +5,7 @@
 ** Login   <thibaud@epitech.net>
 **
 ** Started on  Wed Feb 26 16:15:20 2014 thibaud
-** Last update Tue Jun  3 18:04:59 2014 odet
+** Last update Fri Jun  6 15:52:35 2014 lhomme
 */
 
 #include "rt.h"
@@ -48,9 +48,12 @@ t_vec3		*norme_cone(t_vec3 *inter)
 {
   t_vec3	*result;
 
+  (void)inter;
   result = xmalloc(sizeof(t_vec3));
   result->x = inter->x;
   result->y = inter->y;
-  result->z = /*inter->z * 0.2 + 50*/0;
+  result->z = 0;
+  //  printf("%f\n%f\n%f\n", result->x, result->y, result->z);
+  //  exit(0);
   return (result);
 }
